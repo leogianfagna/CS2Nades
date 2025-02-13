@@ -26,7 +26,7 @@ export const MapsSelector = ({ handleMapSelector }) => {
               <div className="col" key={index}>
                 <div className="p-3">
                   <img
-                    src={"/maps/" + item + ".png"}
+                    src={"maps/" + item + ".png"}
                     className="maps-selector"
                     onClick={() => handleMapSelector(item.toLowerCase())}
                   ></img>
