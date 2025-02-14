@@ -37,31 +37,31 @@
         width: 100%;
     }
 
-    .kaka {
+    .single-nade-image-container {
         width: 100% !important;
     }
     
-    .popo {
+    .nades-images-container {
         display: block !important;
         width: 100%;
     }
 
     .nade-image {
         height: 400px;
+        width: 100%;
+        object-fit: fill; /* Distorce a imagem para caber na div */
     }
 
 }
 
-.kaka {
+.single-nade-image-container {
     width: 50%;
 }
 
-.popo {
+.nades-images-container {
     display: flex;
 }
 
 .throw-type {
     text-align: end;
 }
-
-

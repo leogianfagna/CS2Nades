@@ -1,5 +1,5 @@
 {
-  "name": "austv",
+  "name": "cs2nades",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,8 +11,8 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "austv": "file:",
     "bootstrap": "^5.3.3",
+    "cs2nades": "file:",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.9",
     "react-dom": "^18.3.1",

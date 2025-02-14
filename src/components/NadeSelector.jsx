@@ -10,7 +10,6 @@ export const NadeSelector = ({ map }) => {
   const [existMaps, setExistMaps] = useState(true); // Estado para armazenar se há nades disponíveis
 
   const handleNadeSelection = (nade) => {
-    console.log("Nade selected: " + nade.local);
     setSelectedNade(nade);
   };
 
@@ -81,15 +80,15 @@ export const NadeSelector = ({ map }) => {
             /* Coluna das imagens */
             /* improv: por que selectedNade?.image1 não se atualiza ao mudar de mapa? isso resolveria o problema de exigir "existMaps" */
             selectedNade?.image1 && selectedNade?.image2 && existMaps && (
-              <div className="col-8 popo">
-                <div className="kaka">
+              <div className="col-8 nades-images-container">
+                <div className="single-nade-image-container">
                   <img
                     src={selectedNade.image1}
                     alt="Pixel da granada"
                     className="nade-image"
                   ></img>
                 </div>
-                <div className="kaka">
+                <div className="single-nade-image-container">
                   <img
                     src={selectedNade.image2}
                     alt="Pixel da granada"
