@@ -28,7 +28,12 @@ export const MapsSelector = ({ handleMapSelector }) => {
                   <img
                     src={"maps/" + item + ".png"}
                     className="maps-selector"
-                    onClick={() => handleMapSelector(item.toLowerCase())}
+                    onClick={() => {
+                      handleMapSelector(item.toLowerCase());
+                      setTimeout(function() {
+                        window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
+                      }, 10)
+                    }}
                   ></img>
                 </div>
               </div>
