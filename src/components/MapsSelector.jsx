@@ -1,7 +1,13 @@
 /* eslint-disable react/prop-types */
 import "./MapsSelector.css";
+import { useState } from "react";
 
 export const MapsSelector = ({ handleMapSelector }) => {
+  const [activeMap, setActiveMap] = useState(null);
+  const handleActiveMap = (map) => {
+    setActiveMap(map);
+  }
+
   const maps = [
     "Mirage",
     "Inferno",
@@ -27,9 +33,10 @@ export const MapsSelector = ({ handleMapSelector }) => {
                 <div className="p-3">
                   <img
                     src={"maps/" + item + ".png"}
-                    className="maps-selector"
+                    className={`maps-selector ${activeMap === index ? "active" : ""}`}
                     onClick={() => {
                       handleMapSelector(item.toLowerCase());
+                      handleActiveMap(index);
                       setTimeout(function() {
                         window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
                       }, 10)
