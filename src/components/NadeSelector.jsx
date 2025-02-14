@@ -44,6 +44,7 @@ export const NadeSelector = ({ map }) => {
             <Dropdown
               onSelect={(eventKey) => setSelectedType(eventKey)}
               className="mb-3 selector-nades"
+              data-bs-theme="dark"
             >
               <Dropdown.Toggle id="dropdown-basic" className="selector-nades">
                 {selectedType ? selectedType : "Escolha um tipo"}
