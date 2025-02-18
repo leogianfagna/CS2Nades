@@ -85,14 +85,14 @@ export const NadeSelector = ({ map }) => {
                   <img
                     src={selectedNade.image1}
                     alt="Pixel da granada"
-                    className="nade-image"
+                    className="nade-image right"
                   ></img>
                 </div>
                 <div className="single-nade-image-container">
                   <img
                     src={selectedNade.image2}
                     alt="Pixel da granada"
-                    className="nade-image"
+                    className="nade-image left"
                   ></img>
                 </div>
               </div>
