@@ -1,5 +1,14 @@
 const nades = [
   {
+    map: "dust2",
+    type: "bangs",
+    local: "🌑 Escuro",
+    throw: "Jump and Throw",
+    image1: "pixels/dust-escuro-tunel-bang-spot.jpg",
+    image2: "pixels/dust-escuro-tunel-bang-pixel.jpg",
+    image3: ""
+  },
+  {
     map: "mirage",
     type: "smokes",
     local: "🪟 Janela",
