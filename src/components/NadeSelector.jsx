@@ -4,7 +4,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { nades } from "/public/data/nades";
 import "./NadeSelector.css";
 
-export const NadeSelector = ({ map }) => {
+export const NadeSelector = ({ map, team }) => {
   const [selectedType, setSelectedType] = useState(null);
   const [selectedNade, setSelectedNade] = useState(null);
   const [existMaps, setExistMaps] = useState(true); // Estado para armazenar se há nades disponíveis
@@ -29,7 +29,7 @@ export const NadeSelector = ({ map }) => {
   }, [filteredNades]);
 
   // Cria o elemento apenas se map estiver definido
-  return map ? (
+  return team ? (
     <section
       id="nade-selector"
       className="container px-4"

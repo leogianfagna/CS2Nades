@@ -1,13 +1,8 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
 import "./TeamSelector.css";
 
-const TeamSelector = () => {
-  const [activeTeam, setTeam] = useState(null);
-  const handleSetTeam = (team) => {
-    setTeam(team);
-  };
-
-  return (
+const TeamSelector = ({ handleTeamSelector, team, map }) => {
+  return map ? (
     <section className="container px-4" style={{ marginTop: "3rem" }}>
       <div className="text-center mb-5">
         <h2 className="news-title mb-0">Escolha o time</h2>
@@ -18,25 +13,31 @@ const TeamSelector = () => {
           <div className="col">
             <img
               src="images/ct_agent.png"
-              className={`${activeTeam === "tr" ? "agents-image-gray" : ""}`}
+              className={`${team === "tr" ? "agents-image-gray" : ""}`}
               onClick={() => {
-                handleSetTeam("ct");
+                handleTeamSelector("ct");
+                setTimeout(function() {
+                  window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
+                }, 10)
               }}
             ></img>
           </div>
           <div className="col">
             <img
               src="images/tr_agent.png"
-              className={`${activeTeam === "ct" ? "agents-image-gray" : ""}`}
+              className={`${team === "ct" ? "agents-image-gray" : ""}`}
               onClick={() => {
-                handleSetTeam("tr");
+                handleTeamSelector("tr");
+                setTimeout(function() {
+                  window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
+                }, 10)
               }}
             ></img>
           </div>
         </div>
       </div>
     </section>
-  );
+  ) : null;
 };
 
 export default TeamSelector;

@@ -8,17 +8,21 @@ import TeamSelector from "./components/TeamSelector";
 
 function App() {
   const [mapSelected, setMap] = useState(null);
+  const [teamSelected, setTeam] = useState(null);
 
   const handleMapSelector = (map) => {
     setMap(map);
-  }
+  };
 
+  const handleTeamSelector = (team) => {
+    setTeam(team);
+  }
 
   return (
     <>
-      <MapsSelector handleMapSelector={handleMapSelector}/>
-      <TeamSelector />
-      <NadeSelector map={mapSelected}/>
+      <MapsSelector handleMapSelector={handleMapSelector} />
+      <TeamSelector handleTeamSelector={handleTeamSelector} team={teamSelected} map={mapSelected}/>
+      <NadeSelector map={mapSelected} team={teamSelected} />
     </>
   );
 }
