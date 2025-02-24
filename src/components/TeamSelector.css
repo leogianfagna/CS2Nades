@@ -1,5 +1,6 @@
 .agents-image img {
-    max-width: 300px;
+    max-width: 250px;
+    max-height: 500px;
     transition: transform 0.3s ease;
 }
 

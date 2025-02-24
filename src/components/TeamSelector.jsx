@@ -3,8 +3,8 @@ import "./TeamSelector.css";
 
 const TeamSelector = ({ handleTeamSelector, team, map }) => {
   return map ? (
-    <section className="container px-4" style={{ marginTop: "3rem" }}>
-      <div className="text-center mb-5">
+    <section className="container">
+      <div className="text-center">
         <h2 className="news-title mb-0">Escolha o time</h2>
         <p className="news-description">Qual lado estamos jogando?</p>
       </div>

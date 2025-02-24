@@ -3,18 +3,26 @@
     color: white;
     font-size: 1.4rem;
     width: 100%;
-    display: block;
+    display: flex;
     cursor: pointer;
+    align-items: center;
+
+    & p {
+        margin: 0;
+        padding: 0;
+    }
+
+    & span {
+        font-size: 0.8rem;
+        color: #7a7a7a;
+        margin: 0 10px;
+        
+    }
 }
 
 .nade-local:hover {
     background-color: rgb(37, 37, 37);
     border-radius: 5px;
-}
-
-.type-box:hover {
-    background-color: #474747 !important;
-    border-color: #474747 !important;
 }
 
 @media (max-width: 600px) {
@@ -53,6 +61,20 @@
 .single-nade-image-container {
     width: 50%;
     height: 596px;
+    position: relative;
+    display: inline-block;
+}
+
+.overlay-text {
+    position: absolute; /* Posiciona o elemento em relação ao contêiner */
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .nade-image {
@@ -74,10 +96,6 @@
     }
 }
 
-.throw-type {
-    text-align: end;
-}
-
 .type-box {
     background-color: #242424;
     border-radius: 5px;
@@ -87,7 +105,8 @@
     text-align: center;
 }
 
-.type-box p {
-    margin: 0;
-    padding: 0;
+.type-box:hover {
+    background-color: #474747 !important;
+    border-color: #474747 !important;
+    cursor: pointer;
 }

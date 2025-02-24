@@ -19,8 +19,8 @@ export const MapsSelector = ({ handleMapSelector }) => {
   ];
 
   return (
-    <section className="container px-4" style={{ marginTop: "3rem" }}>
-      <div className="text-center mb-5">
+    <section className="container">
+      <div className="text-center mb-2">
         <h2 className="news-title mb-0">Escolha o mapa</h2>
         <p className="news-description">Qual mapa estamos jogando?</p>
       </div>
@@ -33,7 +33,7 @@ export const MapsSelector = ({ handleMapSelector }) => {
                 <div className="p-3">
                   <img
                     src={"maps/" + item + ".png"}
-                    className={`maps-selector ${activeMap === index ? "active" : ""}`}
+                    className={`maps-selector ${activeMap === index ? "" : "maps-selector-gray"}`}
                     onClick={() => {
                       handleMapSelector(item.toLowerCase());
                       handleActiveMap(index);

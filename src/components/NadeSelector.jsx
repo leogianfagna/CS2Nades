@@ -24,10 +24,15 @@ export const NadeSelector = ({ map, team }) => {
     }
   });
 
+  const sortedNades = nadesByTeam.sort((a, b) => {
+    const order = { A: 1, B: 2, MEIO: 3 };
+    return order[a.side] - order[b.side];
+  });
+
   const filteredNades =
     selectedType != null && selectedType != "Todas"
-      ? nadesByTeam.filter((nade) => nade.type === selectedType.toLowerCase())
-      : nadesByTeam; // Se nada for selecionado, mostra tudo
+      ? sortedNades.filter((nade) => nade.type === selectedType.toLowerCase())
+      : sortedNades; // Se nada for selecionado, mostra tudo
 
   useEffect(() => {
     setExistMaps(filteredNades.length > 0); // Atualiza existMaps quando filteredNades mudar
@@ -35,14 +40,10 @@ export const NadeSelector = ({ map, team }) => {
 
   // Cria o elemento apenas se map estiver definido
   return team ? (
-    <section
-      id="nade-selector"
-      className="container px-4"
-      style={{ marginTop: "3rem" }}
-    >
+    <section id="nade-selector" className="container">
       {/* Exibição das nades filtrados */}
       <div className="container">
-        <div className="text-center" style={{marginBottom: "1rem"}}>
+        <div className="text-center" style={{ marginBottom: "1rem" }}>
           <div className="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             <div className="col">
               <div
@@ -151,13 +152,13 @@ export const NadeSelector = ({ map, team }) => {
           <div className="col">
             {filteredNades.length > 0 ? (
               filteredNades.map((nade, index) => (
-                <div key={index} className="mb-2">
-                  <a
-                    className="nade-local"
-                    onClick={() => handleNadeSelection(nade)}
-                  >
-                    {nade.local}
-                  </a>
+                <div
+                  key={index}
+                  className="mb-2 nade-local"
+                  onClick={() => handleNadeSelection(nade)}
+                >
+                  <p>{nade.local}</p>
+                  <span>{nade.side}</span>
                 </div>
               ))
             ) : (
@@ -183,14 +184,12 @@ export const NadeSelector = ({ map, team }) => {
                     alt="Pixel da granada"
                     className="nade-image left"
                   ></img>
+                  <div className="overlay-text">{selectedNade?.throw && existMaps ? selectedNade.throw : ""}</div>
                 </div>
               </div>
             )
           }
         </div>
-        <p className="throw-type">
-          {selectedNade?.throw && existMaps ? selectedNade.throw : ""}
-        </p>
       </div>
 
       <div className="mt-4"></div>
