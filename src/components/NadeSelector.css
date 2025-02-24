@@ -12,11 +12,6 @@
     border-radius: 5px;
 }
 
-.type-box:hover {
-    background-color: #474747 !important;
-    border-color: #474747 !important;
-}
-
 @media (max-width: 600px) {
 
     .selector-col {
@@ -87,7 +82,8 @@
     text-align: center;
 }
 
-.type-box p {
-    margin: 0;
-    padding: 0;
+.type-box:hover {
+    background-color: #474747 !important;
+    border-color: #474747 !important;
+    cursor: pointer;
 }

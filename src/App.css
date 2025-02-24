@@ -4,10 +4,13 @@
 }
 
 body {
-    font-size: 1.1rem;
     font-family: 'Poppins-Regular', sans-serif;
     background-color: var(--background-color);
     color: white;
+}
+
+section {
+    margin-top: 3rem;
 }
 
 .news-description {
