@@ -4,6 +4,7 @@ import "./App.css";
 import { MapsSelector } from "./components/MapsSelector";
 import { NadeSelector } from "./components/NadeSelector";
 import { useState } from "react";
+import TeamSelector from "./components/TeamSelector";
 
 function App() {
   const [mapSelected, setMap] = useState(null);
@@ -16,6 +17,7 @@ function App() {
   return (
     <>
       <MapsSelector handleMapSelector={handleMapSelector}/>
+      <TeamSelector />
       <NadeSelector map={mapSelected}/>
     </>
   );
