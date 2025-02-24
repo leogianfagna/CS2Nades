@@ -1,6 +1,12 @@
+import { useState } from "react";
 import "./TeamSelector.css";
 
 const TeamSelector = () => {
+  const [activeTeam, setTeam] = useState(null);
+  const handleSetTeam = (team) => {
+    setTeam(team);
+  };
+
   return (
     <section className="container px-4" style={{ marginTop: "3rem" }}>
       <div className="text-center mb-5">
@@ -10,10 +16,22 @@ const TeamSelector = () => {
       <div className="container text-center">
         <div className="row agents-image">
           <div className="col">
-            <img src="images/ct_agent.png"></img>
+            <img
+              src="images/ct_agent.png"
+              className={`${activeTeam === "tr" ? "agents-image-gray" : ""}`}
+              onClick={() => {
+                handleSetTeam("ct");
+              }}
+            ></img>
           </div>
           <div className="col">
-            <img src="images/tr_agent.png"></img>
+            <img
+              src="images/tr_agent.png"
+              className={`${activeTeam === "ct" ? "agents-image-gray" : ""}`}
+              onClick={() => {
+                handleSetTeam("tr");
+              }}
+            ></img>
           </div>
         </div>
       </div>

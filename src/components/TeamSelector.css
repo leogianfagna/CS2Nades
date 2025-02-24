@@ -1,9 +1,12 @@
 .agents-image img {
     max-width: 300px;
+    transition: transform 0.3s ease;
 }
 
-/*
 .agents-image img:hover {
-    transform: matrix3d();
+    transform: scale(1.09);
 }
-*/
+
+.agents-image-gray {
+    filter: grayscale(100%);
+}
