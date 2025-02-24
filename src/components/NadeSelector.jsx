@@ -152,7 +152,11 @@ export const NadeSelector = ({ map, team }) => {
           <div className="col">
             {filteredNades.length > 0 ? (
               filteredNades.map((nade, index) => (
-                <div key={index} className="mb-2 nade-local" onClick={() => handleNadeSelection(nade)}>
+                <div
+                  key={index}
+                  className="mb-2 nade-local"
+                  onClick={() => handleNadeSelection(nade)}
+                >
                   <p>{nade.local}</p>
                   <span>{nade.side}</span>
                 </div>
@@ -180,14 +184,12 @@ export const NadeSelector = ({ map, team }) => {
                     alt="Pixel da granada"
                     className="nade-image left"
                   ></img>
+                  <div className="overlay-text">{selectedNade?.throw && existMaps ? selectedNade.throw : ""}</div>
                 </div>
               </div>
             )
           }
         </div>
-        <p className="throw-type">
-          {selectedNade?.throw && existMaps ? selectedNade.throw : ""}
-        </p>
       </div>
 
       <div className="mt-4"></div>
