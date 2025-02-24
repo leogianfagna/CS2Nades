@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import Dropdown from "react-bootstrap/Dropdown";
 import { nades } from "/public/data/nades";
 import "./NadeSelector.css";
 
@@ -23,7 +22,7 @@ export const NadeSelector = ({ map, team }) => {
     if (item.team === team) {
       return item;
     }
-  })
+  });
 
   const filteredNades =
     selectedType != null && selectedType != "Todas"
@@ -43,29 +42,113 @@ export const NadeSelector = ({ map, team }) => {
     >
       {/* Exibição das nades filtrados */}
       <div className="container">
+        <div className="text-center" style={{marginBottom: "1rem"}}>
+          <div className="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+            <div className="col">
+              <div
+                className="p-3 type-box"
+                onClick={() => {
+                  setSelectedType("Smokes");
+                }}
+              >
+                💨 Smokes
+              </div>
+            </div>
+            <div className="col">
+              <div
+                className="p-3 type-box"
+                onClick={() => {
+                  setSelectedType("Molotovs");
+                }}
+              >
+                🔥 Molotovs
+              </div>
+            </div>
+            <div className="col">
+              <div
+                className="p-3 type-box"
+                onClick={() => {
+                  setSelectedType("Bangs");
+                }}
+              >
+                💥 Bangs
+              </div>
+            </div>
+            <div className="col">
+              <div
+                className="p-3 type-box"
+                onClick={() => {
+                  setSelectedType("Granadas");
+                }}
+              >
+                💣 Granadas
+              </div>
+            </div>
+            <div className="col">
+              <div
+                className="p-3 type-box"
+                onClick={() => {
+                  setSelectedType("Retakes");
+                }}
+              >
+                🤯 Retakes
+              </div>
+            </div>
+            <div className="col">
+              <div
+                className="p-3 type-box"
+                onClick={() => {
+                  setSelectedType("Solo");
+                }}
+              >
+                🦸 Solo
+              </div>
+            </div>
+            <div className="col">
+              <div
+                className="p-3 type-box"
+                onClick={() => {
+                  setSelectedType("Ensaiadas");
+                }}
+              >
+                🤼‍♀️ Ensaiadas
+              </div>
+            </div>
+            <div className="col">
+              <div
+                className="p-3 type-box"
+                onClick={() => {
+                  setSelectedType("One way");
+                }}
+              >
+                👀 One way
+              </div>
+            </div>
+            <div className="col">
+              <div
+                className="p-3 type-box"
+                onClick={() => {
+                  setSelectedType("Combos");
+                }}
+              >
+                📍 Combo
+              </div>
+            </div>
+            <div className="col">
+              <div
+                className="p-3 type-box"
+                onClick={() => {
+                  setSelectedType("Fakes");
+                }}
+              >
+                🃏 Fakes
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="row">
           {/* Coluna das opções de nade */}
           <div className="col">
-            <Dropdown
-              onSelect={(eventKey) => setSelectedType(eventKey)}
-              className="mb-3 selector-nades"
-              data-bs-theme="dark"
-            >
-              <Dropdown.Toggle id="dropdown-basic" className="selector-nades">
-                {selectedType ? selectedType : "Escolha um tipo"}
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu>
-                <Dropdown.Item eventKey="Smokes">Smokes</Dropdown.Item>
-                <Dropdown.Item eventKey="Molotovs">Molotovs</Dropdown.Item>
-                <Dropdown.Item eventKey="Bangs">Bangs</Dropdown.Item>
-                <Dropdown.Divider />
-                <Dropdown.Item eventKey="Todas">Todas</Dropdown.Item>
-                <Dropdown.Item eventKey="Retakes">Retakes</Dropdown.Item>
-                <Dropdown.Item eventKey="Ensaiada">Ensaiada</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-
             {filteredNades.length > 0 ? (
               filteredNades.map((nade, index) => (
                 <div key={index} className="mb-2">
@@ -105,7 +188,9 @@ export const NadeSelector = ({ map, team }) => {
             )
           }
         </div>
-        <p className="throw-type">{(selectedNade?.throw && existMaps) ? selectedNade.throw : ""}</p>
+        <p className="throw-type">
+          {selectedNade?.throw && existMaps ? selectedNade.throw : ""}
+        </p>
       </div>
 
       <div className="mt-4"></div>

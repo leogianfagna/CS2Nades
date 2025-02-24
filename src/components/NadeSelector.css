@@ -12,15 +12,7 @@
     border-radius: 5px;
 }
 
-.selector-nades {
-    width: 100% ;
-    background-color: #242424 !important;
-    border-color: #242424 !important;
-    color: rgb(211, 208, 208) !important;
-    border-radius: 5px !important;
-}
-
-.selector-nades:hover {
+.type-box:hover {
     background-color: #474747 !important;
     border-color: #474747 !important;
 }
@@ -84,4 +76,18 @@
 
 .throw-type {
     text-align: end;
+}
+
+.type-box {
+    background-color: #242424;
+    border-radius: 5px;
+    padding: 40px !important;
+    display: block;
+    align-items: center;
+    text-align: center;
+}
+
+.type-box p {
+    margin: 0;
+    padding: 0;
 }
