@@ -33,7 +33,7 @@ export const MapsSelector = ({ handleMapSelector }) => {
                 <div className="p-3">
                   <img
                     src={"maps/" + item + ".png"}
-                    className={`maps-selector ${activeMap === index ? "active" : ""}`}
+                    className={`maps-selector ${activeMap === index ? "" : "maps-selector-gray"}`}
                     onClick={() => {
                       handleMapSelector(item.toLowerCase());
                       handleActiveMap(index);
