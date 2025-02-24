@@ -19,10 +19,16 @@ export const NadeSelector = ({ map, team }) => {
     }
   });
 
+  const nadesByTeam = nadesByMap.filter((item) => {
+    if (item.team === team) {
+      return item;
+    }
+  })
+
   const filteredNades =
     selectedType != null && selectedType != "Todas"
-      ? nadesByMap.filter((nade) => nade.type === selectedType.toLowerCase())
-      : nadesByMap; // Se nada for selecionado, mostra tudo
+      ? nadesByTeam.filter((nade) => nade.type === selectedType.toLowerCase())
+      : nadesByTeam; // Se nada for selecionado, mostra tudo
 
   useEffect(() => {
     setExistMaps(filteredNades.length > 0); // Atualiza existMaps quando filteredNades mudar
