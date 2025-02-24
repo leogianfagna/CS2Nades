@@ -3,8 +3,21 @@
     color: white;
     font-size: 1.4rem;
     width: 100%;
-    display: block;
+    display: flex;
     cursor: pointer;
+    align-items: center;
+
+    & p {
+        margin: 0;
+        padding: 0;
+    }
+
+    & span {
+        font-size: 0.8rem;
+        color: #7a7a7a;
+        margin: 0 10px;
+        
+    }
 }
 
 .nade-local:hover {
