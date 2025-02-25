@@ -40,7 +40,7 @@ export const NadeSelector = ({ map, team }) => {
 
   // Cria o elemento apenas se map estiver definido
   return team ? (
-    <section id="nade-selector" className="container">
+    <section className="container" id="nade-section">
       {/* Exibição das nades filtrados */}
       <div className="container">
         <div className="text-center" style={{ marginBottom: "1rem" }}>

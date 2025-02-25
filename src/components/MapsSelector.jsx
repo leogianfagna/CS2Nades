@@ -27,7 +27,7 @@ export const MapsSelector = ({ handleMapSelector }) => {
   ];
 
   return (
-    <section className="container">
+    <section className="container" id="map-section">
       <div className="text-center mb-2">
         <h2 className="news-title mb-0">Escolha o mapa</h2>
         <p className="news-description">Qual mapa estamos jogando?</p>
@@ -39,21 +39,16 @@ export const MapsSelector = ({ handleMapSelector }) => {
             maps.map((item, index) => (
               <div className="col" key={index}>
                 <div className="p-3">
-                  <img
-                    src={"maps/" + item + ".png"}
-                    className={`maps-selector ${estilosSelecao(index)}`}
-                    onClick={() => {
-                      handleMapSelector(item.toLowerCase());
-                      handleActiveMap(index);
-                      setTimeout(function () {
-                        window.scrollTo(
-                          0,
-                          document.body.scrollHeight ||
-                            document.documentElement.scrollHeight
-                        );
-                      }, 10);
-                    }}
-                  ></img>
+                  <a href="#team-section">
+                    <img
+                      src={"maps/" + item + ".png"}
+                      className={`maps-selector ${estilosSelecao(index)}`}
+                      onClick={() => {
+                        handleMapSelector(item.toLowerCase());
+                        handleActiveMap(index);
+                      }}
+                    ></img>
+                  </a>
                 </div>
               </div>
             ))
