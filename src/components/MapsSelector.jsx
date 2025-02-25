@@ -6,7 +6,15 @@ export const MapsSelector = ({ handleMapSelector }) => {
   const [activeMap, setActiveMap] = useState(null);
   const handleActiveMap = (map) => {
     setActiveMap(map);
-  }
+  };
+
+  const estilosSelecao = (index) => {
+    if (activeMap === null || activeMap === index) {
+      return "";
+    } else {
+      return "maps-selector-gray";
+    }
+  };
 
   const maps = [
     "Mirage",
@@ -33,13 +41,17 @@ export const MapsSelector = ({ handleMapSelector }) => {
                 <div className="p-3">
                   <img
                     src={"maps/" + item + ".png"}
-                    className={`maps-selector ${activeMap === index ? "" : "maps-selector-gray"}`}
+                    className={`maps-selector ${estilosSelecao(index)}`}
                     onClick={() => {
                       handleMapSelector(item.toLowerCase());
                       handleActiveMap(index);
-                      setTimeout(function() {
-                        window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
-                      }, 10)
+                      setTimeout(function () {
+                        window.scrollTo(
+                          0,
+                          document.body.scrollHeight ||
+                            document.documentElement.scrollHeight
+                        );
+                      }, 10);
                     }}
                   ></img>
                 </div>
