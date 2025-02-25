@@ -1,13 +1,31 @@
-.agents-image img {
+@media (max-width: 600px) {
+  .agents-image img {
+    max-width: 110px;
+    max-height: 200px;
+    transition: transform 0.3s ease;
+  }
+
+  .agents-image img:hover {
+    transform: scale(1.09);
+  }
+
+  .agents-image-gray {
+    filter: grayscale(100%);
+  }
+}
+
+@media (min-width: 601px) {
+  .agents-image img {
     max-width: 250px;
     max-height: 500px;
     transition: transform 0.3s ease;
-}
+  }
 
-.agents-image img:hover {
+  .agents-image img:hover {
     transform: scale(1.09);
-}
+  }
 
-.agents-image-gray {
+  .agents-image-gray {
     filter: grayscale(100%);
+  }
 }
