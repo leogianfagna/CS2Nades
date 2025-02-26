@@ -38,11 +38,11 @@
     display: block !important;
     width: 100%;
 
-    & .right {
+    & .left {
       border-radius: 3% 3% 0% 0% !important;
     }
 
-    & .left {
+    & .right {
       border-radius: 0% 0% 3% 3% !important;
     }
   }
@@ -59,7 +59,9 @@
   width: 50%;
   height: 596px;
   position: relative;
-  display: inline-block;
+  display: flex; /* Garante que os filhos respeitem a altura */
+  flex-direction: column; /* Organiza os elementos em coluna */
+  overflow: hidden; /* Impede que as imagens ultrapassem os limites */
 }
 
 .overlay-text {
@@ -84,11 +86,11 @@
 .nades-images-container {
   display: flex;
 
-  & .right {
+  & .left {
     border-radius: 3% 0% 0% 3%;
   }
 
-  & .left {
+  & .right {
     border-radius: 0% 3% 3% 0%;
   }
 }
@@ -105,4 +107,13 @@
   background-color: #474747 !important;
   border-color: #474747 !important;
   cursor: pointer;
+}
+
+.image-zoom {
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-zoom:hover {
+  transform: scale(3);
 }

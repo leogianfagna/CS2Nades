@@ -6,9 +6,9 @@ const nades = [
     side: "B",
     team: "ct",
     throw: "Jump and Throw",
-    image1: "pixels/dust-escuro-tunel-bang-spot.jpg",
+    spot_image: "pixels/dust-escuro-tunel-bang-spot.jpg",
     image2: "pixels/dust-escuro-tunel-bang-pixel.jpg",
-    image3: ""
+    image3: "",
   },
   {
     map: "mirage",
@@ -17,9 +17,9 @@ const nades = [
     side: "MEIO",
     team: "ct",
     throw: "D + Jump and Throw",
-    image1: "pixels/mirage-janela-spot.png",
+    spot_image: "pixels/mirage-janela-spot.png",
     image2: "pixels/mirage-janela-pixel.png",
-    image3: ""
+    image3: "",
   },
   {
     map: "mirage",
@@ -28,9 +28,9 @@ const nades = [
     side: "A",
     team: "ct",
     throw: "Jump and Throw",
-    image1: "pixels/mirage-ct-spot.png",
+    spot_image: "pixels/mirage-ct-spot.png",
     image2: "pixels/mirage-ct-pixel.png",
-    image3: ""
+    image3: "",
   },
   {
     map: "mirage",
@@ -39,9 +39,9 @@ const nades = [
     side: "A",
     team: "ct",
     throw: "Clique esquerdo",
-    image1: "pixels/mirage-cabecinha-spot.png",
+    spot_image: "pixels/mirage-cabecinha-spot.png",
     image2: "pixels/mirage-cabecinha-pixel.png",
-    image3: ""
+    image3: "",
   },
   {
     map: "mirage",
@@ -50,10 +50,23 @@ const nades = [
     side: "A",
     team: "ct",
     throw: "Jump and Throw",
-    image1: "pixels/mirage-jungle-spot.png",
+    spot_image: "pixels/mirage-jungle-spot.png",
     image2: "pixels/mirage-jungle-pixel.png",
-    image3: ""
-  }
+    image3: "",
+  },
+  {
+    map: "ancient",
+    type: "solo",
+    local: "B",
+    side: "",
+    team: "tr",
+    spot_image: "pixels/ancient-tr-a-spot.png",
+    steps: [
+      { throw: "Jump and Throw", pixel: "pixels/ancient-tr-combo-a-1.png" },
+      { throw: "Jump and Throw", pixel: "pixels/ancient-tr-combo-a-2.png" },
+      { throw: "Jump and Throw", pixel: "pixels/ancient-tr-combo-a-3.png" },
+    ],
+  },
 ];
 
 export { nades };

@@ -34,9 +34,68 @@ export const NadeSelector = ({ map, team }) => {
       ? sortedNades.filter((nade) => nade.type === selectedType.toLowerCase())
       : sortedNades; // Se nada for selecionado, mostra tudo
 
+  const renderRightImage = () => {
+    if (selectedType === "Solo") {
+      const images = selectedNade.steps;
+      return (
+        <>
+          {images.map((image, i) => (
+            <>
+              <img
+                key={i}
+                src={image.pixel}
+                alt="Pixel da granada"
+                className="nade-image right image-zoom"
+                style={{height: `${100/images.length}%`}}
+              ></img>
+              {/* FIX: Label de tipo de jogada para cada imagem
+              <div className="overlay-text">
+                {image.throw}
+              </div>
+              */}
+            </>
+          ))}
+        </>
+      );
+    } else {
+      return (
+        <>
+          <img
+            src={selectedNade.image2}
+            alt="Pixel da granada"
+            className="nade-image right"
+          ></img>
+          <div className="overlay-text">
+            {selectedNade?.throw && existMaps ? selectedNade.throw : ""}
+          </div>
+        </>
+      );
+    }
+  };
+
+  const renderLeftImage = () => {
+    return (
+      <img
+        src={selectedNade.spot_image}
+        alt="Pixel da granada"
+        className="nade-image left"
+      ></img>
+    );
+  };
+
+  // useEffect executa a função quando o parâmetro definido [nas chaves] é alterado
   useEffect(() => {
-    setExistMaps(filteredNades.length > 0); // Atualiza existMaps quando filteredNades mudar
+    setExistMaps(filteredNades.length > 0);
   }, [filteredNades]);
+
+  // Voltar selectedNade para null quando muda a opção
+  useEffect(() => {
+    setSelectedNade(null);
+  }, [selectedType]);
+
+  useEffect(() => {
+    setSelectedNade(null);
+  }, [map]);
 
   // Cria o elemento apenas se map estiver definido
   return team ? (
@@ -168,23 +227,14 @@ export const NadeSelector = ({ map, team }) => {
 
           {
             /* Coluna das imagens */
-            /* improv: por que selectedNade?.image1 não se atualiza ao mudar de mapa? isso resolveria o problema de exigir "existMaps" */
-            selectedNade?.image1 && selectedNade?.image2 && existMaps && (
+            /* improv: por que selectedNade?.spot_image não se atualiza ao mudar de mapa? isso resolveria o problema de exigir "existMaps" */
+            selectedNade && (
               <div className="col-8 nades-images-container">
                 <div className="single-nade-image-container">
-                  <img
-                    src={selectedNade.image1}
-                    alt="Pixel da granada"
-                    className="nade-image right"
-                  ></img>
+                  {renderLeftImage()}
                 </div>
                 <div className="single-nade-image-container">
-                  <img
-                    src={selectedNade.image2}
-                    alt="Pixel da granada"
-                    className="nade-image left"
-                  ></img>
-                  <div className="overlay-text">{selectedNade?.throw && existMaps ? selectedNade.throw : ""}</div>
+                  {renderRightImage()}
                 </div>
               </div>
             )
