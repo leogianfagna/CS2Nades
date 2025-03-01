@@ -209,7 +209,7 @@ export const NadeSelector = ({ map, team }) => {
         <div className="row">
           {/* Coluna das opções de nade */}
           <div className="col">
-            {filteredNades.length > 0 ? (
+            {filteredNades.length > 0 && selectedType ? (
               filteredNades.map((nade, index) => (
                 <div
                   key={index}
@@ -221,7 +221,11 @@ export const NadeSelector = ({ map, team }) => {
                 </div>
               ))
             ) : (
-              <p>Nenhuma jogada encontrada para esta categoria.</p>
+              selectedType ? (
+                <p>Nenhuma jogada encontrada para esta categoria.</p>
+              ) : (
+                <p>Selecione um tipo.</p>
+              )
             )}
           </div>
 
