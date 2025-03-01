@@ -1,15 +1,12 @@
-/* eslint-disable react/prop-types */
 import "./MapsSelector.css";
-import { useState } from "react";
+import { useContext } from "react";
+import { FilterContext } from "../context/FilterContext";
 
-export const MapsSelector = ({ handleMapSelector }) => {
-  const [activeMap, setActiveMap] = useState(null);
-  const handleActiveMap = (map) => {
-    setActiveMap(map);
-  };
+export const MapsSelector = () => {
+  const { map, setMap } = useContext(FilterContext);
 
   const estilosSelecao = (index) => {
-    if (activeMap === null || activeMap === index) {
+    if (map === null || map === index.toLowerCase()) {
       return "";
     } else {
       return "maps-selector-gray";
@@ -36,16 +33,15 @@ export const MapsSelector = ({ handleMapSelector }) => {
         <div className="row row-cols-2 row-cols-lg-3 g-2 g-lg-3">
           {
             /* Repetir para cada mapa */
-            maps.map((item, index) => (
+            maps.map((mapName, index) => (
               <div className="col" key={index}>
                 <div className="p-3">
                   <a href="#team-section">
                     <img
-                      src={"maps/" + item + ".png"}
-                      className={`maps-selector ${estilosSelecao(index)}`}
+                      src={"maps/" + mapName + ".png"}
+                      className={`maps-selector ${estilosSelecao(mapName)}`}
                       onClick={() => {
-                        handleMapSelector(item.toLowerCase());
-                        handleActiveMap(index);
+                        setMap(mapName.toLowerCase());
                       }}
                     ></img>
                   </a>

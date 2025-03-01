@@ -1,16 +1,14 @@
-/* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { nades } from "/public/data/nades";
+import { FilterContext } from "../context/FilterContext";
 import "./NadeSelector.css";
 
-export const NadeSelector = ({ map, team }) => {
-  const [selectedType, setSelectedType] = useState(null);
-  const [selectedNade, setSelectedNade] = useState(null);
-  const [existMaps, setExistMaps] = useState(true); // Estado para armazenar se há nades disponíveis
-
-  const handleNadeSelection = (nade) => {
-    setSelectedNade(nade);
-  };
+export const NadeSelector = () => {
+  const { map } = useContext(FilterContext);
+  const { team } = useContext(FilterContext);
+  const { nade, setNade } = useContext(FilterContext);
+  const { nadeType, setNadeType } = useContext(FilterContext);
+  const [isNadeAvaiable, setNadeStatus] = useState(true);
 
   const nadesByMap = nades.filter((item) => {
     if (item.map === map) {
@@ -30,13 +28,13 @@ export const NadeSelector = ({ map, team }) => {
   });
 
   const filteredNades =
-    selectedType != null && selectedType != "Todas"
-      ? sortedNades.filter((nade) => nade.type === selectedType.toLowerCase())
+    nadeType != null && nadeType != "Todas"
+      ? sortedNades.filter((nade) => nade.type === nadeType.toLowerCase())
       : sortedNades; // Se nada for selecionado, mostra tudo
 
   const renderRightImage = () => {
-    if (selectedType === "Solo") {
-      const images = selectedNade.steps;
+    if (nadeType === "Solo") {
+      const images = nade.steps;
       return (
         <>
           {images.map((image, i) => (
@@ -46,7 +44,7 @@ export const NadeSelector = ({ map, team }) => {
                 src={image.pixel}
                 alt="Pixel da granada"
                 className="nade-image right image-zoom"
-                style={{height: `${100/images.length}%`}}
+                style={{ height: `${100 / images.length}%` }}
               ></img>
               {/* FIX: Label de tipo de jogada para cada imagem
               <div className="overlay-text">
@@ -61,12 +59,12 @@ export const NadeSelector = ({ map, team }) => {
       return (
         <>
           <img
-            src={selectedNade.image2}
+            src={nade.image2}
             alt="Pixel da granada"
             className="nade-image right"
           ></img>
           <div className="overlay-text">
-            {selectedNade?.throw && existMaps ? selectedNade.throw : ""}
+            {nade?.throw && isNadeAvaiable ? nade.throw : ""}
           </div>
         </>
       );
@@ -76,7 +74,7 @@ export const NadeSelector = ({ map, team }) => {
   const renderLeftImage = () => {
     return (
       <img
-        src={selectedNade.spot_image}
+        src={nade.spot_image}
         alt="Pixel da granada"
         className="nade-image left"
       ></img>
@@ -85,16 +83,16 @@ export const NadeSelector = ({ map, team }) => {
 
   // useEffect executa a função quando o parâmetro definido [nas chaves] é alterado
   useEffect(() => {
-    setExistMaps(filteredNades.length > 0);
+    setNadeStatus(filteredNades.length > 0);
   }, [filteredNades]);
 
-  // Voltar selectedNade para null quando muda a opção
+  // Voltar nade para null quando muda a opção
   useEffect(() => {
-    setSelectedNade(null);
-  }, [selectedType]);
+    setNade(null);
+  }, [nadeType]);
 
   useEffect(() => {
-    setSelectedNade(null);
+    setNade(null);
   }, [map]);
 
   // Cria o elemento apenas se map estiver definido
@@ -108,7 +106,7 @@ export const NadeSelector = ({ map, team }) => {
               <div
                 className="p-3 type-box"
                 onClick={() => {
-                  setSelectedType("Smokes");
+                  setNadeType("Smokes");
                 }}
               >
                 💨 Smokes
@@ -118,7 +116,7 @@ export const NadeSelector = ({ map, team }) => {
               <div
                 className="p-3 type-box"
                 onClick={() => {
-                  setSelectedType("Molotovs");
+                  setNadeType("Molotovs");
                 }}
               >
                 🔥 Molotovs
@@ -128,7 +126,7 @@ export const NadeSelector = ({ map, team }) => {
               <div
                 className="p-3 type-box"
                 onClick={() => {
-                  setSelectedType("Bangs");
+                  setNadeType("Bangs");
                 }}
               >
                 💥 Bangs
@@ -138,7 +136,7 @@ export const NadeSelector = ({ map, team }) => {
               <div
                 className="p-3 type-box"
                 onClick={() => {
-                  setSelectedType("Granadas");
+                  setNadeType("Granadas");
                 }}
               >
                 💣 Granadas
@@ -148,7 +146,7 @@ export const NadeSelector = ({ map, team }) => {
               <div
                 className="p-3 type-box"
                 onClick={() => {
-                  setSelectedType("Retakes");
+                  setNadeType("Retakes");
                 }}
               >
                 🤯 Retakes
@@ -158,7 +156,7 @@ export const NadeSelector = ({ map, team }) => {
               <div
                 className="p-3 type-box"
                 onClick={() => {
-                  setSelectedType("Solo");
+                  setNadeType("Solo");
                 }}
               >
                 🦸 Solo
@@ -168,7 +166,7 @@ export const NadeSelector = ({ map, team }) => {
               <div
                 className="p-3 type-box"
                 onClick={() => {
-                  setSelectedType("Ensaiadas");
+                  setNadeType("Ensaiadas");
                 }}
               >
                 🤼‍♀️ Ensaiadas
@@ -178,7 +176,7 @@ export const NadeSelector = ({ map, team }) => {
               <div
                 className="p-3 type-box"
                 onClick={() => {
-                  setSelectedType("One way");
+                  setNadeType("One way");
                 }}
               >
                 👀 One way
@@ -188,7 +186,7 @@ export const NadeSelector = ({ map, team }) => {
               <div
                 className="p-3 type-box"
                 onClick={() => {
-                  setSelectedType("Combos");
+                  setNadeType("Combos");
                 }}
               >
                 📍 Combo
@@ -198,7 +196,7 @@ export const NadeSelector = ({ map, team }) => {
               <div
                 className="p-3 type-box"
                 onClick={() => {
-                  setSelectedType("Fakes");
+                  setNadeType("Fakes");
                 }}
               >
                 🃏 Fakes
@@ -209,30 +207,27 @@ export const NadeSelector = ({ map, team }) => {
         <div className="row">
           {/* Coluna das opções de nade */}
           <div className="col">
-            {filteredNades.length > 0 && selectedType ? (
+            {filteredNades.length > 0 && nadeType ? (
               filteredNades.map((nade, index) => (
                 <div
                   key={index}
                   className="mb-2 nade-local"
-                  onClick={() => handleNadeSelection(nade)}
+                  onClick={() => setNade(nade)}
                 >
                   <p>{nade.local}</p>
                   <span>{nade.side}</span>
                 </div>
               ))
+            ) : nadeType ? (
+              <p>Nenhuma jogada encontrada para esta categoria.</p>
             ) : (
-              selectedType ? (
-                <p>Nenhuma jogada encontrada para esta categoria.</p>
-              ) : (
-                <p>Selecione um tipo.</p>
-              )
+              <p>Selecione um tipo.</p>
             )}
           </div>
 
           {
             /* Coluna das imagens */
-            /* improv: por que selectedNade?.spot_image não se atualiza ao mudar de mapa? isso resolveria o problema de exigir "existMaps" */
-            selectedNade && (
+            nade && (
               <div className="col-8 nades-images-container">
                 <div className="single-nade-image-container">
                   {renderLeftImage()}
