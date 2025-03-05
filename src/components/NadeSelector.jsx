@@ -104,7 +104,7 @@ export const NadeSelector = () => {
           <div className="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             <div className="col">
               <div
-                className="p-3 type-box"
+                className={`p-3 type-box ${nadeType === "Smokes" ? "selected" : ""}`}
                 onClick={() => {
                   setNadeType("Smokes");
                 }}
@@ -114,7 +114,7 @@ export const NadeSelector = () => {
             </div>
             <div className="col">
               <div
-                className="p-3 type-box"
+                className={`p-3 type-box ${nadeType === "Molotovs" ? "selected" : ""}`}
                 onClick={() => {
                   setNadeType("Molotovs");
                 }}
@@ -124,7 +124,7 @@ export const NadeSelector = () => {
             </div>
             <div className="col">
               <div
-                className="p-3 type-box"
+                className={`p-3 type-box ${nadeType === "Bangs" ? "selected" : ""}`}
                 onClick={() => {
                   setNadeType("Bangs");
                 }}
@@ -134,7 +134,7 @@ export const NadeSelector = () => {
             </div>
             <div className="col">
               <div
-                className="p-3 type-box"
+                className={`p-3 type-box ${nadeType === "Granadas" ? "selected" : ""}`}
                 onClick={() => {
                   setNadeType("Granadas");
                 }}
@@ -144,7 +144,7 @@ export const NadeSelector = () => {
             </div>
             <div className="col">
               <div
-                className="p-3 type-box"
+                className={`p-3 type-box ${nadeType === "Retakes" ? "selected" : ""}`}
                 onClick={() => {
                   setNadeType("Retakes");
                 }}
@@ -154,7 +154,7 @@ export const NadeSelector = () => {
             </div>
             <div className="col">
               <div
-                className="p-3 type-box"
+                className={`p-3 type-box ${nadeType === "Solo" ? "selected" : ""}`}
                 onClick={() => {
                   setNadeType("Solo");
                 }}
@@ -164,7 +164,7 @@ export const NadeSelector = () => {
             </div>
             <div className="col">
               <div
-                className="p-3 type-box"
+                className={`p-3 type-box ${nadeType === "Ensaiadas" ? "selected" : ""}`}
                 onClick={() => {
                   setNadeType("Ensaiadas");
                 }}
@@ -174,7 +174,7 @@ export const NadeSelector = () => {
             </div>
             <div className="col">
               <div
-                className="p-3 type-box"
+                className={`p-3 type-box ${nadeType === "One way" ? "selected" : ""}`}
                 onClick={() => {
                   setNadeType("One way");
                 }}
@@ -184,7 +184,7 @@ export const NadeSelector = () => {
             </div>
             <div className="col">
               <div
-                className="p-3 type-box"
+                className={`p-3 type-box ${nadeType === "Combos" ? "selected" : ""}`}
                 onClick={() => {
                   setNadeType("Combos");
                 }}
@@ -194,7 +194,7 @@ export const NadeSelector = () => {
             </div>
             <div className="col">
               <div
-                className="p-3 type-box"
+                className={`p-3 type-box ${nadeType === "Fakes" ? "selected" : ""}`}
                 onClick={() => {
                   setNadeType("Fakes");
                 }}

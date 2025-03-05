@@ -118,3 +118,8 @@
 .image-zoom:hover {
   transform: scale(3);
 }
+
+.selected {
+  background-color: #474747 !important;
+  border-color: #474747 !important;
+}
