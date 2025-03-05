@@ -123,3 +123,9 @@
   background-color: #474747 !important;
   border-color: #474747 !important;
 }
+
+#nade-section p {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}

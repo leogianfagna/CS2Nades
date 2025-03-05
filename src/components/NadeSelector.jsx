@@ -10,6 +10,13 @@ export const NadeSelector = () => {
   const { nadeType, setNadeType } = useContext(FilterContext);
   const [isNadeAvaiable, setNadeStatus] = useState(true);
 
+  function getNadeCount(type) {
+    const countByMap = nades.filter((item) => item.map === map);
+    const countBySection = countByMap.filter((item) => item.type === type);
+    const countByTeam = countBySection.filter((item) => item.team === team);
+    return countByTeam.length;
+  }
+
   const filteredNades = nades
     .filter((item) => item.map === map && item.team === team)
     .sort((a, b) => {
@@ -102,7 +109,7 @@ export const NadeSelector = () => {
                   setNadeType("Smokes");
                 }}
               >
-                💨 Smokes
+                💨 Smokes {getNadeCount("smokes")}
               </div>
             </div>
             <div className="col">
@@ -114,7 +121,7 @@ export const NadeSelector = () => {
                   setNadeType("Molotovs");
                 }}
               >
-                🔥 Molotovs
+                🔥 Molotovs {getNadeCount("molotovs")}
               </div>
             </div>
             <div className="col">
@@ -126,7 +133,7 @@ export const NadeSelector = () => {
                   setNadeType("Bangs");
                 }}
               >
-                💥 Bangs
+                💥 Bangs {getNadeCount("bangs")}
               </div>
             </div>
             <div className="col">
@@ -138,7 +145,7 @@ export const NadeSelector = () => {
                   setNadeType("Granadas");
                 }}
               >
-                💣 Granadas
+                💣 Granadas {getNadeCount("granadas")}
               </div>
             </div>
             <div className="col">
@@ -150,7 +157,7 @@ export const NadeSelector = () => {
                   setNadeType("Retakes");
                 }}
               >
-                🤯 Retakes
+                🤯 Retakes {getNadeCount("retakes")}
               </div>
             </div>
             <div className="col">
@@ -162,7 +169,7 @@ export const NadeSelector = () => {
                   setNadeType("Solo");
                 }}
               >
-                🦸 Solo
+                🦸 Solo {getNadeCount("solo")}
               </div>
             </div>
             <div className="col">
@@ -174,7 +181,7 @@ export const NadeSelector = () => {
                   setNadeType("Ensaiadas");
                 }}
               >
-                🤼‍♀️ Ensaiadas
+                🤼‍♀️ Ensaiadas {getNadeCount("ensaiadas")}
               </div>
             </div>
             <div className="col">
@@ -186,7 +193,7 @@ export const NadeSelector = () => {
                   setNadeType("One way");
                 }}
               >
-                👀 One way
+                👀 One way {getNadeCount("one way")}
               </div>
             </div>
             <div className="col">
@@ -198,7 +205,7 @@ export const NadeSelector = () => {
                   setNadeType("Combos");
                 }}
               >
-                📍 Combo
+                📍 Combo {getNadeCount("combo")}
               </div>
             </div>
             <div className="col">
@@ -210,7 +217,7 @@ export const NadeSelector = () => {
                   setNadeType("Fakes");
                 }}
               >
-                🃏 Fakes
+                🃏 Fakes {getNadeCount("fakes")}
               </div>
             </div>
           </div>
