@@ -101,6 +101,7 @@
   display: block;
   align-items: center;
   text-align: center;
+  user-select: none;
 }
 
 .type-box:hover {
