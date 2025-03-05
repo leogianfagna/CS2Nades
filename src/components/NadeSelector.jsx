@@ -11,10 +11,11 @@ export const NadeSelector = () => {
   const [isNadeAvaiable, setNadeStatus] = useState(true);
 
   function getNadeCount(type) {
-    const countByMap = nades.filter((item) => item.map === map);
-    const countBySection = countByMap.filter((item) => item.type === type);
-    const countByTeam = countBySection.filter((item) => item.team === team);
-    return countByTeam.length;
+    const countByMap = nades
+      .filter((item) => item.map === map)
+      .filter((item) => item.type === type)
+      .filter((item) => item.team === team);
+    return countByMap.length;
   }
 
   const filteredNades = nades
@@ -97,166 +98,174 @@ export const NadeSelector = () => {
   return team ? (
     <section className="container" id="nade-section">
       {/* Exibição das nades filtrados */}
-      <div className="container">
-        <div className="text-center" style={{ marginBottom: "1rem" }}>
-          <div className="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-            <div className="col">
-              <div
-                className={`p-3 type-box ${
-                  nadeType === "Smokes" ? "selected" : ""
-                }`}
-                onClick={() => {
-                  setNadeType("Smokes");
-                }}
-              >
-                💨 Smokes {getNadeCount("smokes")}
-              </div>
-            </div>
-            <div className="col">
-              <div
-                className={`p-3 type-box ${
-                  nadeType === "Molotovs" ? "selected" : ""
-                }`}
-                onClick={() => {
-                  setNadeType("Molotovs");
-                }}
-              >
-                🔥 Molotovs {getNadeCount("molotovs")}
-              </div>
-            </div>
-            <div className="col">
-              <div
-                className={`p-3 type-box ${
-                  nadeType === "Bangs" ? "selected" : ""
-                }`}
-                onClick={() => {
-                  setNadeType("Bangs");
-                }}
-              >
-                💥 Bangs {getNadeCount("bangs")}
-              </div>
-            </div>
-            <div className="col">
-              <div
-                className={`p-3 type-box ${
-                  nadeType === "Granadas" ? "selected" : ""
-                }`}
-                onClick={() => {
-                  setNadeType("Granadas");
-                }}
-              >
-                💣 Granadas {getNadeCount("granadas")}
-              </div>
-            </div>
-            <div className="col">
-              <div
-                className={`p-3 type-box ${
-                  nadeType === "Retakes" ? "selected" : ""
-                }`}
-                onClick={() => {
-                  setNadeType("Retakes");
-                }}
-              >
-                🤯 Retakes {getNadeCount("retakes")}
-              </div>
-            </div>
-            <div className="col">
-              <div
-                className={`p-3 type-box ${
-                  nadeType === "Solo" ? "selected" : ""
-                }`}
-                onClick={() => {
-                  setNadeType("Solo");
-                }}
-              >
-                🦸 Solo {getNadeCount("solo")}
-              </div>
-            </div>
-            <div className="col">
-              <div
-                className={`p-3 type-box ${
-                  nadeType === "Ensaiadas" ? "selected" : ""
-                }`}
-                onClick={() => {
-                  setNadeType("Ensaiadas");
-                }}
-              >
-                🤼‍♀️ Ensaiadas {getNadeCount("ensaiadas")}
-              </div>
-            </div>
-            <div className="col">
-              <div
-                className={`p-3 type-box ${
-                  nadeType === "One way" ? "selected" : ""
-                }`}
-                onClick={() => {
-                  setNadeType("One way");
-                }}
-              >
-                👀 One way {getNadeCount("one way")}
-              </div>
-            </div>
-            <div className="col">
-              <div
-                className={`p-3 type-box ${
-                  nadeType === "Combos" ? "selected" : ""
-                }`}
-                onClick={() => {
-                  setNadeType("Combos");
-                }}
-              >
-                📍 Combo {getNadeCount("combo")}
-              </div>
-            </div>
-            <div className="col">
-              <div
-                className={`p-3 type-box ${
-                  nadeType === "Fakes" ? "selected" : ""
-                }`}
-                onClick={() => {
-                  setNadeType("Fakes");
-                }}
-              >
-                🃏 Fakes {getNadeCount("fakes")}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          {/* Coluna das opções de nade */}
+      <div className="container text-center" style={{ marginBottom: "1rem" }}>
+        <div className="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
           <div className="col">
-            {filteredNades.length > 0 && nadeType ? (
-              filteredNades.map((nade, index) => (
-                <div
-                  key={index}
-                  className="mb-2 nade-local"
-                  onClick={() => setNade(nade)}
-                >
-                  <p>{nade.local}</p>
-                  <span>{nade.side}</span>
-                </div>
-              ))
-            ) : nadeType ? (
-              <p>Nenhuma jogada encontrada para esta categoria.</p>
-            ) : (
-              <p>Selecione um tipo.</p>
-            )}
+            <div
+              className={`p-3 type-box ${
+                nadeType === "Smokes" ? "selected" : ""
+              }`}
+              onClick={() => {
+                setNadeType("Smokes");
+              }}
+            >
+              <p>💨 Smokes</p>
+              <span>{getNadeCount("smokes")}</span>
+            </div>
           </div>
-
-          {
-            /* Coluna das imagens */
-            nade && (
-              <div className="col-8 nades-images-container">
-                <div className="single-nade-image-container">
-                  {renderLeftImage()}
-                </div>
-                <div className="single-nade-image-container">
-                  {renderRightImage()}
-                </div>
-              </div>
-            )
-          }
+          <div className="col">
+            <div
+              className={`p-3 type-box ${
+                nadeType === "Molotovs" ? "selected" : ""
+              }`}
+              onClick={() => {
+                setNadeType("Molotovs");
+              }}
+            >
+              <p>🔥 Molotovs</p>
+              <span>{getNadeCount("molotovs")}</span>
+            </div>
+          </div>
+          <div className="col">
+            <div
+              className={`p-3 type-box ${
+                nadeType === "Bangs" ? "selected" : ""
+              }`}
+              onClick={() => {
+                setNadeType("Bangs");
+              }}
+            >
+              <p>💥 Bangs</p>
+              <span>{getNadeCount("bangs")}</span>
+            </div>
+          </div>
+          <div className="col">
+            <div
+              className={`p-3 type-box ${
+                nadeType === "Granadas" ? "selected" : ""
+              }`}
+              onClick={() => {
+                setNadeType("Granadas");
+              }}
+            >
+              <p>💣 Granadas</p>
+              <span>{getNadeCount("granadas")}</span>
+            </div>
+          </div>
+          <div className="col">
+            <div
+              className={`p-3 type-box ${
+                nadeType === "Retakes" ? "selected" : ""
+              }`}
+              onClick={() => {
+                setNadeType("Retakes");
+              }}
+            >
+              <p>🤯 Retakes</p>
+              <span>{getNadeCount("retakes")}</span>
+            </div>
+          </div>
+          <div className="col">
+            <div
+              className={`p-3 type-box ${
+                nadeType === "Solo" ? "selected" : ""
+              }`}
+              onClick={() => {
+                setNadeType("Solo");
+              }}
+            >
+              <p>🦸 Solo</p>
+              <span>{getNadeCount("solo")}</span>
+            </div>
+          </div>
+          <div className="col">
+            <div
+              className={`p-3 type-box ${
+                nadeType === "Ensaiadas" ? "selected" : ""
+              }`}
+              onClick={() => {
+                setNadeType("Ensaiadas");
+              }}
+            >
+              <p>🤼‍♀️ Ensaiadas</p>
+              <span>{getNadeCount("ensaiadas")}</span>
+            </div>
+          </div>
+          <div className="col">
+            <div
+              className={`p-3 type-box ${
+                nadeType === "One way" ? "selected" : ""
+              }`}
+              onClick={() => {
+                setNadeType("One way");
+              }}
+            >
+              <p>👀 One way</p>
+              <span>{getNadeCount("one way")}</span>
+            </div>
+          </div>
+          <div className="col">
+            <div
+              className={`p-3 type-box ${
+                nadeType === "Combos" ? "selected" : ""
+              }`}
+              onClick={() => {
+                setNadeType("Combos");
+              }}
+            >
+              <p>📍 Combo</p>
+              <span>{getNadeCount("combo")}</span>
+            </div>
+          </div>
+          <div className="col">
+            <div
+              className={`p-3 type-box ${
+                nadeType === "Fakes" ? "selected" : ""
+              }`}
+              onClick={() => {
+                setNadeType("Fakes");
+              }}
+            >
+              <p>🃏 Fakes</p>
+              <span>{getNadeCount("fakes")}</span>
+            </div>
+          </div>
         </div>
+      </div>
+      <div className="row">
+        {/* Coluna das opções de nade */}
+        <div className="col">
+          {filteredNades.length > 0 && nadeType ? (
+            filteredNades.map((nade, index) => (
+              <div
+                key={index}
+                className="mb-2 nade-local"
+                onClick={() => setNade(nade)}
+              >
+                <p>{nade.local}</p>
+                <span>{nade.side}</span>
+              </div>
+            ))
+          ) : nadeType ? (
+            <p>Nenhuma jogada encontrada para esta categoria.</p>
+          ) : (
+            <p>Selecione um tipo.</p>
+          )}
+        </div>
+
+        {
+          /* Coluna das imagens */
+          nade && (
+            <div className="col-8 nades-images-container">
+              <div className="single-nade-image-container">
+                {renderLeftImage()}
+              </div>
+              <div className="single-nade-image-container">
+                {renderRightImage()}
+              </div>
+            </div>
+          )
+        }
       </div>
 
       <div className="mt-4"></div>

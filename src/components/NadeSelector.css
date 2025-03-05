@@ -98,10 +98,18 @@
 .type-box {
   background-color: #242424;
   border-radius: 5px;
-  display: block;
+  display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
   user-select: none;
+
+  & span {
+    margin-left: 1rem;
+    font-size: 0.85rem;
+    color: #b8b3b3;
+    margin-top: 0.3ch;
+  }
 }
 
 .type-box:hover {
