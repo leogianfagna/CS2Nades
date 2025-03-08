@@ -46,13 +46,13 @@ export const NadeSelector = () => {
 
   const renderRightImage = () => {
     if (nadeType === "Entry") {
-      // To-do: Selecionar o passo 1 automaticamente
+      
+      // Selecionar o passo 1 automaticamente quando nenhum está selecionado
       if (!step) {
-        return;
+        setStep(nade.steps[0]);
       }
 
       const nadeObject = nades.find((nade) => nade.id === step);
-      console.log(nadeObject);
       return (
         <>
           <img
@@ -301,7 +301,6 @@ export const NadeSelector = () => {
                 className="mb-2 nade-local"
                 onClick={() => setNade(nade)}
               >
-                {console.log(nade)}
                 <p>{nade.local}</p>
                 <span>{nade.side}</span>
               </div>
