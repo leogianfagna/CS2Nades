@@ -46,7 +46,6 @@ export const NadeSelector = () => {
 
   const renderRightImage = () => {
     if (nadeType === "Entry") {
-      
       // Selecionar o passo 1 automaticamente quando nenhum está selecionado
       if (!step) {
         setStep(nade.steps[0]);
@@ -67,7 +66,9 @@ export const NadeSelector = () => {
       );
     }
 
-    if (nadeType === "Solo") {
+    // Não gerar a imagem até que seja selecionado uma nade do tipo "Solo", isso porque se ele tentar gerar uma imagem,
+    // não vai encontrar nade.steps, pois isso não existe em um outro tipo de nade. Assegurar disso usando nade.steps != null
+    if (nadeType === "Solo" && nade.steps) {
       const images = nade.steps;
       return (
         <>
@@ -146,11 +147,7 @@ export const NadeSelector = () => {
   // Voltar nade para null quando muda a opção
   useEffect(() => {
     setNade(null);
-  }, [nadeType]);
-
-  useEffect(() => {
-    setNade(null);
-  }, [map]);
+  }, [nadeType, map, setNade]);
 
   // Cria o elemento apenas se map estiver definido
   return team ? (
