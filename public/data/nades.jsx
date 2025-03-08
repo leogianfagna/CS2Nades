@@ -8,8 +8,8 @@ const nades = [
     team: "ct",
     throw: "Jump and Throw",
     spot_image: "pixels/dust/escuro-tunel-bang-spot.jpg",
-    image2: "pixels/dust/escuro-tunel-bang-pixel.jpg",
-    image3: "",
+    pixel_image: "pixels/dust/escuro-tunel-bang-pixel.jpg",
+    result_image: "",
   },
   {
     id: 2,
@@ -20,8 +20,8 @@ const nades = [
     team: "ct",
     throw: "D + Jump and Throw",
     spot_image: "pixels/mirage/janela-spot.png",
-    image2: "pixels/mirage/janela-pixel.png",
-    image3: "",
+    pixel_image: "pixels/mirage/janela-pixel.png",
+    result_image: "",
   },
   {
     id: 3,
@@ -32,8 +32,8 @@ const nades = [
     team: "ct",
     throw: "Jump and Throw",
     spot_image: "pixels/mirage/ct-spot.png",
-    image2: "pixels/mirage/ct-pixel.png",
-    image3: "",
+    pixel_image: "pixels/mirage/ct-pixel.png",
+    result_image: "",
   },
   {
     id: 4,
@@ -44,8 +44,8 @@ const nades = [
     team: "ct",
     throw: "Clique esquerdo",
     spot_image: "pixels/mirage/cabecinha-spot.png",
-    image2: "pixels/mirage/cabecinha-pixel.png",
-    image3: "",
+    pixel_image: "pixels/mirage/cabecinha-pixel.png",
+    result_image: "",
   },
   {
     id: 5,
@@ -56,8 +56,8 @@ const nades = [
     team: "ct",
     throw: "Jump and Throw",
     spot_image: "pixels/mirage/jungle-spot.png",
-    image2: "pixels/mirage/jungle-pixel.png",
-    image3: "",
+    pixel_image: "pixels/mirage/jungle-pixel.png",
+    result_image: "",
   },
   {
     id: 6,
@@ -82,8 +82,8 @@ const nades = [
     team: "tr",
     throw: "Clique esquerdo",
     spot_image: "pixels/inferno/smoke-van-spot.png",
-    image2: "pixels/inferno/smoke-van-pixel.png",
-    image3: "",
+    pixel_image: "pixels/inferno/smoke-van-pixel.png",
+    result_image: "",
   },
   {
     id: 6,
@@ -94,8 +94,8 @@ const nades = [
     team: "tr",
     throw: "Agache + Clique esquerdo",
     spot_image: "pixels/inferno/bang-areia-spot.png",
-    image2: "pixels/inferno/bang-areia-pixel.png",
-    image3: "",
+    pixel_image: "pixels/inferno/bang-areia-pixel.png",
+    result_image: "",
   },
   {
     id: 7,
@@ -106,8 +106,8 @@ const nades = [
     team: "tr",
     throw: "Clique esquerdo",
     spot_image: "pixels/inferno/molotov-areia-spot.png",
-    image2: "pixels/inferno/molotov-areia-pixel.png",
-    image3: "",
+    pixel_image: "pixels/inferno/molotov-areia-pixel.png",
+    result_image: "",
   },
   // Entry
   {

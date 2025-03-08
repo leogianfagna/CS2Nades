@@ -44,7 +44,7 @@ export const NadeSelector = () => {
       return (
         <>
           <img
-            src={nadeObject.image2}
+            src={nadeObject.pixel_image}
             alt="Pixel da granada"
             className="nade-image right"
           ></img>
@@ -81,7 +81,7 @@ export const NadeSelector = () => {
       return (
         <>
           <img
-            src={nade.image2}
+            src={nade.pixel_image}
             alt="Pixel da granada"
             className="nade-image right"
           ></img>
