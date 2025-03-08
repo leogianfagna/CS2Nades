@@ -1,8 +1,8 @@
 const nades = [
   {
     id: 1,
-    map: "dust2",
     type: "bangs",
+    map: "dust2",
     local: "🌑 Escuro",
     side: "B",
     team: "ct",
@@ -13,8 +13,8 @@ const nades = [
   },
   {
     id: 2,
-    map: "mirage",
     type: "smokes",
+    map: "mirage",
     local: "🪟 Janela",
     side: "MEIO",
     team: "ct",
@@ -25,8 +25,8 @@ const nades = [
   },
   {
     id: 3,
-    map: "mirage",
     type: "smokes",
+    map: "mirage",
     local: "📦 CT",
     side: "A",
     team: "ct",
@@ -37,8 +37,8 @@ const nades = [
   },
   {
     id: 4,
-    map: "mirage",
     type: "smokes",
+    map: "mirage",
     local: "🤯 Cabecinha",
     side: "A",
     team: "ct",
@@ -49,8 +49,8 @@ const nades = [
   },
   {
     id: 5,
-    map: "mirage",
     type: "smokes",
+    map: "mirage",
     local: "🐊 Jungle",
     side: "A",
     team: "ct",
@@ -61,8 +61,8 @@ const nades = [
   },
   {
     id: 6,
-    map: "ancient",
     type: "solo",
+    map: "ancient",
     local: "B",
     side: "",
     team: "tr",
@@ -74,9 +74,9 @@ const nades = [
     ],
   },
   {
-    id: 5,
-    map: "inferno",
+    id: 7,
     type: "smokes",
+    map: "inferno",
     local: "Van",
     side: "A",
     team: "tr",
@@ -86,9 +86,9 @@ const nades = [
     result_image: "",
   },
   {
-    id: 6,
-    map: "inferno",
+    id: 8,
     type: "bangs",
+    map: "inferno",
     local: "Tapete",
     side: "A",
     team: "tr",
@@ -98,9 +98,9 @@ const nades = [
     result_image: "",
   },
   {
-    id: 7,
-    map: "inferno",
+    id: 9,
     type: "molotovs",
+    map: "inferno",
     local: "Areia",
     side: "A",
     team: "tr",
@@ -109,15 +109,14 @@ const nades = [
     pixel_image: "pixels/inferno/molotov-areia-pixel.png",
     result_image: "",
   },
-  // Entry
   {
-    id: 8,
-    map: "inferno",
+    id: 10,
     type: "entry",
+    map: "inferno",
     local: "Tapete",
     side: "A",
     team: "tr",
-    steps: [5, 6, 7],
+    steps: [7, 8, 9],
     result_image: "pixels/mirage/jungle-pixel.png"
   },
 ];

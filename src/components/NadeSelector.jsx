@@ -12,6 +12,17 @@ export const NadeSelector = () => {
   const { step, setStep } = useContext(FilterContext);
   const [isNadeAvaiable, setNadeStatus] = useState(true);
 
+  // Formata o tipo que tem no objeto para um nome bonito, que possa aparecer em cima da imagem quando condiz
+  // com o contexto
+  function typeToName(type) {
+    let newString;
+    if (type.charAt(type.length - 1) === "s") {
+      newString = type.replace(/.$/, "");
+    }
+
+    return newString.charAt(0).toUpperCase() + newString.slice(1);
+  }
+
   function getNadeCount(type) {
     const countByMap = nades
       .filter((item) => item.map === map)
@@ -39,7 +50,8 @@ export const NadeSelector = () => {
       if (!step) {
         return;
       }
-      const nadeObject = nades.find(nade => nade.id === step);
+
+      const nadeObject = nades.find((nade) => nade.id === step);
       console.log(nadeObject);
       return (
         <>
@@ -99,7 +111,8 @@ export const NadeSelector = () => {
       if (!step) {
         return;
       }
-      const nadeObject = nades.find(nade => nade.id === step);
+
+      const nadeObject = nades.find((nade) => nade.id === step);
       return (
         <>
           <img
@@ -108,12 +121,14 @@ export const NadeSelector = () => {
             className="nade-image left"
           ></img>
           <div className="overlay-text">
-            {nadeObject?.throw && isNadeAvaiable ? nadeObject.throw : ""}
+            {nadeObject?.type && isNadeAvaiable
+              ? typeToName(nadeObject.type)
+              : ""}
           </div>
         </>
       );
     }
-    
+
     return (
       <img
         src={nade.spot_image}
@@ -277,8 +292,6 @@ export const NadeSelector = () => {
       </div>
 
       <section className="row container">
-        
-
         {/* Coluna das opções de nade */}
         <div className="col-4">
           {filteredNades.length > 0 && nadeType ? (
@@ -315,7 +328,9 @@ export const NadeSelector = () => {
       </section>
       <section className="row container">
         <div className="col-4"></div>
-        <div className="col-8"><EntrySteps /></div>
+        <div className="col-8">
+          <EntrySteps />
+        </div>
       </section>
 
       <div className="mt-4"></div>
