@@ -314,7 +314,7 @@ export const NadeSelector = () => {
         {
           /* Coluna das imagens */
           nade && (
-            <div className="col-8 nades-images-container test-border">
+            <div className="col-8 nades-images-container">
               <div className="single-nade-image-container">
                 {renderLeftImage()}
               </div>
