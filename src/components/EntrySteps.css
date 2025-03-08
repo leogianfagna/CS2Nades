@@ -1,0 +1,22 @@
+.test {
+    background-color: red;
+}
+
+.steps {
+    background-color: #242424;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+    outline: solid 0.1px rgba(88, 86, 86, 1);
+
+    & div {
+        padding: 0.5rem;
+    }
+
+    & div:hover {
+        background-color: #474747;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+}

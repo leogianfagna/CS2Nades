@@ -8,10 +8,12 @@ const FilterContextProvider = ({ children }) => {
   const [nadeType, setNadeType] = useState(null);
   const [nade, setNade] = useState(null);
   const [team, setTeam] = useState(null);
+  const [entryMode, setEntryMode] = useState(null);
+  const [step, setStep] = useState(null);
 
   return (
     <FilterContext.Provider
-      value={{ map, setMap, nadeType, setNadeType, nade, setNade, team, setTeam }}
+      value={{ map, setMap, nadeType, setNadeType, nade, setNade, team, setTeam, entryMode, setEntryMode, step, setStep }}
     >
       {children}
     </FilterContext.Provider>

@@ -2,12 +2,14 @@ import { useEffect, useState, useContext } from "react";
 import { nades } from "/public/data/nades";
 import { FilterContext } from "../context/FilterContext";
 import "./NadeSelector.css";
+import EntrySteps from "./EntrySteps";
 
 export const NadeSelector = () => {
   const { map } = useContext(FilterContext);
   const { team } = useContext(FilterContext);
   const { nade, setNade } = useContext(FilterContext);
   const { nadeType, setNadeType } = useContext(FilterContext);
+  const { step, setStep } = useContext(FilterContext);
   const [isNadeAvaiable, setNadeStatus] = useState(true);
 
   function getNadeCount(type) {
@@ -32,6 +34,27 @@ export const NadeSelector = () => {
     );
 
   const renderRightImage = () => {
+    if (nadeType === "Entry") {
+      // To-do: Selecionar o passo 1 automaticamente
+      if (!step) {
+        return;
+      }
+      const nadeObject = nades.find(nade => nade.id === step);
+      console.log(nadeObject);
+      return (
+        <>
+          <img
+            src={nadeObject.image2}
+            alt="Pixel da granada"
+            className="nade-image right"
+          ></img>
+          <div className="overlay-text">
+            {nadeObject?.throw && isNadeAvaiable ? nadeObject.throw : ""}
+          </div>
+        </>
+      );
+    }
+
     if (nadeType === "Solo") {
       const images = nade.steps;
       return (
@@ -71,6 +94,26 @@ export const NadeSelector = () => {
   };
 
   const renderLeftImage = () => {
+    if (nadeType === "Entry") {
+      // To-do: Selecionar o passo 1 automaticamente
+      if (!step) {
+        return;
+      }
+      const nadeObject = nades.find(nade => nade.id === step);
+      return (
+        <>
+          <img
+            src={nadeObject.spot_image}
+            alt="Pixel da granada"
+            className="nade-image left"
+          ></img>
+          <div className="overlay-text">
+            {nadeObject?.throw && isNadeAvaiable ? nadeObject.throw : ""}
+          </div>
+        </>
+      );
+    }
+    
     return (
       <img
         src={nade.spot_image}
@@ -207,14 +250,14 @@ export const NadeSelector = () => {
           <div className="col">
             <div
               className={`p-3 type-box ${
-                nadeType === "Combos" ? "selected" : ""
+                nadeType === "Entry" ? "selected" : ""
               }`}
               onClick={() => {
-                setNadeType("Combos");
+                setNadeType("Entry");
               }}
             >
-              <p>📍 Combo</p>
-              <span>{getNadeCount("combo")}</span>
+              <p>📍 Entry</p>
+              <span>{getNadeCount("entry")}</span>
             </div>
           </div>
           <div className="col">
@@ -232,9 +275,12 @@ export const NadeSelector = () => {
           </div>
         </div>
       </div>
-      <div className="row">
+
+      <section className="row container">
+        
+
         {/* Coluna das opções de nade */}
-        <div className="col">
+        <div className="col-4">
           {filteredNades.length > 0 && nadeType ? (
             filteredNades.map((nade, index) => (
               <div
@@ -242,6 +288,7 @@ export const NadeSelector = () => {
                 className="mb-2 nade-local"
                 onClick={() => setNade(nade)}
               >
+                {console.log(nade)}
                 <p>{nade.local}</p>
                 <span>{nade.side}</span>
               </div>
@@ -252,11 +299,10 @@ export const NadeSelector = () => {
             <p>Selecione um tipo.</p>
           )}
         </div>
-
         {
           /* Coluna das imagens */
           nade && (
-            <div className="col-8 nades-images-container">
+            <div className="col-8 nades-images-container test-border">
               <div className="single-nade-image-container">
                 {renderLeftImage()}
               </div>
@@ -266,7 +312,11 @@ export const NadeSelector = () => {
             </div>
           )
         }
-      </div>
+      </section>
+      <section className="row container">
+        <div className="col-4"></div>
+        <div className="col-8"><EntrySteps /></div>
+      </section>
 
       <div className="mt-4"></div>
     </section>
