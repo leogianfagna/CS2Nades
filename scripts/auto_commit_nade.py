@@ -27,6 +27,7 @@ def extract_issue_info(body):
 issue_info = extract_issue_info(issue_body)
 
 # Verifica se todas as informações necessárias estão presentes
+# '<nome da variavel>' : '<nome que está no ISSUE_TEMPLATE>'
 required_fields = {
     'tipo_de_nade': 'Tipo de nade',
     'mapa': 'Mapa',
@@ -35,7 +36,8 @@ required_fields = {
     'tipo_de_arremesso': 'Tipo de arremesso',
     'time': 'Time',
     'imagem_do_spot': 'Imagem do spot',
-    'imagem_do_pixel': 'Imagem do pixel'
+    'imagem_do_pixel': 'Imagem do pixel',
+    'imagem_do_resultado': 'Imagem do resultado'
 }
 
 # Campos opcionais
