@@ -1,0 +1,87 @@
+name: Insert nade
+title: Adicionar uma nova nade
+description: "Insira nades através deste issue."
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Tipo de nade
+      description: "Qual o tipo da nade?"
+      options:
+        - Smokes
+        - Bangs
+        - Molotvs
+        - Granadas
+        - One Way
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
+    id: map
+    attributes:
+      label: Mapa
+      description: "Mapa:"
+      options:
+        - Mirage
+        - Inferno
+        - Ancient
+        - Anubis
+        - Dust 2
+        - Nuke
+        - Train
+      default: 0
+    validations:
+      required: true
+  - type: input
+    id: local
+    attributes:
+      label: "Local"
+      placeholder: "Janela, Escuro, etc"
+    validations:
+      required: true
+  - type: input
+    id: side
+    attributes:
+      label: "Lado"
+      placeholder: "A, B, Meio, etc"
+    validations:
+      required: true
+  - type: input
+    id: throw
+    attributes:
+      label: "Tipo de arremesso"
+      placeholder: "Jump and Throw, Clique esquerdo, etc."
+    validations:
+      required: true
+  - type: dropdown
+    id: team
+    attributes:
+      label: Time
+      description: "Time:"
+      options:
+        - CT
+        - TR
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: spot-image
+    attributes:
+      label: "Imagem do spot"
+      description: "Envie uma imagem do local do arremeço (use ctrol v ou upload)."
+    validations:
+      required: true
+  - type: textarea
+    id: pixel-image
+    attributes:
+      label: "Imagem do pixel"
+      description: "Envie uma imagem de onde mirar para arremessar."
+    validations:
+      required: true
+  - type: textarea
+    id: result-image
+    attributes:
+      label: "Imagem do resultado"
+      description: "Envie uma imagem de como fica a granada."
+    validations:
+      required: true
