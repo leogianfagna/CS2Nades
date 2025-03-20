@@ -32,4 +32,4 @@ jobs:
         GITHUB_REPOSITORY: ${{ github.repository }}
         ISSUE_NUMBER: ${{ github.event.issue.number }}
       run: |
-        python auto_commit.py
+        python scripts/auto_commit_nade.py
