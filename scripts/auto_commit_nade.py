@@ -37,12 +37,7 @@ required_fields = {
     'time': 'Time',
     'imagem_do_spot': 'Imagem do spot',
     'imagem_do_pixel': 'Imagem do pixel',
-    'imagem_do_resultado': 'Imagem do resultado'
-}
-
-# Campos opcionais
-optional_fields = {
-    'imagem_do_resultado': 'Imagem do resultado'
+    'imagem_do_result_image': 'Imagem do resultado'
 }
 
 missing_fields = []
@@ -52,11 +47,6 @@ for field_key, field_name in required_fields.items():
 
 if missing_fields:
     raise ValueError(f"Campos obrigatórios faltando no issue: {', '.join(missing_fields)}")
-
-# Define valores padrão para campos opcionais
-for field_key, field_name in optional_fields.items():
-    if field_key not in issue_info:
-        issue_info[field_key] = "N/A"
 
 # Ler o arquivo e transformar em um dataframe
 nades_file = "public/data/nades.json"
@@ -83,7 +73,7 @@ novos_dados = {
     "throw": issue_info['tipo_de_arremesso'],
     "spot_image": extract_url(issue_info['imagem_do_spot']),
     "pixel_image": extract_url(issue_info['imagem_do_pixel']),
-    "result_image": extract_url(issue_info['imagem_do_resultado']),
+    "result_image": extract_url(issue_info['imagem_do_result_image']),
     "steps": None
 }
 
