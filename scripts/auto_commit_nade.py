@@ -4,20 +4,15 @@ from github import Github
 import json
 import pandas as pd
 
-# Configurações
 GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
 REPO_NAME = os.getenv('GITHUB_REPOSITORY')
 ISSUE_NUMBER = os.getenv('ISSUE_NUMBER')
 
-# Inicializa o objeto GitHub
 g = Github(GITHUB_TOKEN)
 repo = g.get_repo(REPO_NAME)
 issue = repo.get_issue(number=int(ISSUE_NUMBER))
-
-# Extrai o corpo do issue
 issue_body = issue.body
 
-# Função para extrair informações do corpo do issue
 def extract_issue_info(body):
     info = {}
     # Expressão regular para capturar campos no formato "### Campo: valor"
@@ -29,13 +24,7 @@ def extract_issue_info(body):
         info[key] = value
     return info
 
-# Extrai as informações
 issue_info = extract_issue_info(issue_body)
-
-# Exibe as informações extraídas
-print("Informações do Issue:")
-for key, value in issue_info.items():
-    print(f"{key}: {value}")
 
 # Verifica se todas as informações necessárias estão presentes
 required_fields = {
@@ -76,18 +65,24 @@ df = pd.DataFrame(dados['nades'])
 print(df)
 
 # Transformar issue registrado em uma nova entrada
+pattern = r"!\[.*?\]\((.*?)\)"
+
+def extract_url(value):
+    match = re.search(pattern, value)
+    return match.group(1) if match else value
+
 novos_dados = {
-    "id": int(df['id'].max()) + 1,  # Incrementa o ID automaticamente
+    "id": int(df['id'].max()) + 1,
     "type": issue_info['tipo_de_nade'],
     "map": issue_info['mapa'],
     "local": issue_info['local'],
     "side": issue_info['lado'],
     "team": issue_info['time'],
     "throw": issue_info['tipo_de_arremesso'],
-    "spot_image": issue_info['imagem_do_spot'],
-    "pixel_image": issue_info['imagem_do_pixel'],
-    "result_image": issue_info['imagem_do_resultado'],
-    "steps": None  # Adicione steps se necessário
+    "spot_image": extract_url(issue_info['imagem_do_spot']),
+    "pixel_image": extract_url(issue_info['imagem_do_pixel']),
+    "result_image": extract_url(issue_info['imagem_do_resultado']),
+    "steps": None
 }
 
 # Adiciona a nova entrada ao DataFrame usando pd.concat
