@@ -1,177 +1,151 @@
 {
-  "nades": [
-    {
-      "id": 1,
-      "type": "bangs",
-      "map": "dust2",
-      "local": "🌑 Escuro",
-      "side": "B",
-      "team": "ct",
-      "throw": "Jump and Throw",
-      "spot_image": "pixels/dust/escuro-tunel-bang-spot.jpg",
-      "pixel_image": "pixels/dust/escuro-tunel-bang-pixel.jpg",
-      "result_image": "",
-      "steps": null
-    },
-    {
-      "id": 2,
-      "type": "smokes",
-      "map": "mirage",
-      "local": "🪟 Janela",
-      "side": "MEIO",
-      "team": "ct",
-      "throw": "D + Jump and Throw",
-      "spot_image": "pixels/mirage/janela-spot.png",
-      "pixel_image": "pixels/mirage/janela-pixel.png",
-      "result_image": "",
-      "steps": null
-    },
-    {
-      "id": 3,
-      "type": "smokes",
-      "map": "mirage",
-      "local": "📦 CT",
-      "side": "A",
-      "team": "ct",
-      "throw": "Jump and Throw",
-      "spot_image": "pixels/mirage/ct-spot.png",
-      "pixel_image": "pixels/mirage/ct-pixel.png",
-      "result_image": "",
-      "steps": null
-    },
-    {
-      "id": 4,
-      "type": "smokes",
-      "map": "mirage",
-      "local": "🤯 Cabecinha",
-      "side": "A",
-      "team": "ct",
-      "throw": "Clique esquerdo",
-      "spot_image": "pixels/mirage/cabecinha-spot.png",
-      "pixel_image": "pixels/mirage/cabecinha-pixel.png",
-      "result_image": "",
-      "steps": null
-    },
-    {
-      "id": 5,
-      "type": "smokes",
-      "map": "mirage",
-      "local": "🐊 Jungle",
-      "side": "A",
-      "team": "ct",
-      "throw": "Jump and Throw",
-      "spot_image": "pixels/mirage/jungle-spot.png",
-      "pixel_image": "pixels/mirage/jungle-pixel.png",
-      "result_image": "",
-      "steps": null
-    },
-    {
-      "id": 6,
-      "type": "solo",
-      "map": "ancient",
-      "local": "B",
-      "side": "",
-      "team": "tr",
-      "throw": null,
-      "spot_image": "pixels/ancient/tr-a-spot.png",
-      "pixel_image": null,
-      "result_image": null,
-      "steps": [
+    "nades": [
         {
-          "throw": "Jump and Throw",
-          "pixel": "pixels/ancient/tr-solo-a-1.png"
+            "id": 1,
+            "type": "bangs",
+            "map": "dust2",
+            "local": "🌑 Escuro",
+            "side": "B",
+            "team": "ct",
+            "throw": "Jump and Throw",
+            "spot_image": "pixels/dust/escuro-tunel-bang-spot.jpg",
+            "pixel_image": "pixels/dust/escuro-tunel-bang-pixel.jpg",
+            "result_image": "",
+            "steps": null
         },
         {
-          "throw": "Jump and Throw",
-          "pixel": "pixels/ancient/tr-solo-a-2.png"
+            "id": 2,
+            "type": "smokes",
+            "map": "mirage",
+            "local": "🪟 Janela",
+            "side": "MEIO",
+            "team": "ct",
+            "throw": "D + Jump and Throw",
+            "spot_image": "pixels/mirage/janela-spot.png",
+            "pixel_image": "pixels/mirage/janela-pixel.png",
+            "result_image": "",
+            "steps": null
         },
         {
-          "throw": "Jump and Throw",
-          "pixel": "pixels/ancient/tr-solo-a-3.png"
+            "id": 3,
+            "type": "smokes",
+            "map": "mirage",
+            "local": "📦 CT",
+            "side": "A",
+            "team": "ct",
+            "throw": "Jump and Throw",
+            "spot_image": "pixels/mirage/ct-spot.png",
+            "pixel_image": "pixels/mirage/ct-pixel.png",
+            "result_image": "",
+            "steps": null
+        },
+        {
+            "id": 4,
+            "type": "smokes",
+            "map": "mirage",
+            "local": "🤯 Cabecinha",
+            "side": "A",
+            "team": "ct",
+            "throw": "Clique esquerdo",
+            "spot_image": "pixels/mirage/cabecinha-spot.png",
+            "pixel_image": "pixels/mirage/cabecinha-pixel.png",
+            "result_image": "",
+            "steps": null
+        },
+        {
+            "id": 5,
+            "type": "smokes",
+            "map": "mirage",
+            "local": "🐊 Jungle",
+            "side": "A",
+            "team": "ct",
+            "throw": "Jump and Throw",
+            "spot_image": "pixels/mirage/jungle-spot.png",
+            "pixel_image": "pixels/mirage/jungle-pixel.png",
+            "result_image": "",
+            "steps": null
+        },
+        {
+            "id": 6,
+            "type": "solo",
+            "map": "ancient",
+            "local": "B",
+            "side": "",
+            "team": "tr",
+            "throw": null,
+            "spot_image": "pixels/ancient/tr-a-spot.png",
+            "pixel_image": null,
+            "result_image": null,
+            "steps": [
+                {
+                    "throw": "Jump and Throw",
+                    "pixel": "pixels/ancient/tr-solo-a-1.png"
+                },
+                {
+                    "throw": "Jump and Throw",
+                    "pixel": "pixels/ancient/tr-solo-a-2.png"
+                },
+                {
+                    "throw": "Jump and Throw",
+                    "pixel": "pixels/ancient/tr-solo-a-3.png"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "type": "smokes",
+            "map": "inferno",
+            "local": "Van",
+            "side": "A",
+            "team": "tr",
+            "throw": "Clique esquerdo",
+            "spot_image": "pixels/inferno/smoke-van-spot.png",
+            "pixel_image": "pixels/inferno/smoke-van-pixel.png",
+            "result_image": "",
+            "steps": null
+        },
+        {
+            "id": 8,
+            "type": "bangs",
+            "map": "inferno",
+            "local": "Tapete",
+            "side": "A",
+            "team": "tr",
+            "throw": "Agache + Clique esquerdo",
+            "spot_image": "pixels/inferno/bang-areia-spot.png",
+            "pixel_image": "pixels/inferno/bang-areia-pixel.png",
+            "result_image": "",
+            "steps": null
+        },
+        {
+            "id": 9,
+            "type": "molotovs",
+            "map": "inferno",
+            "local": "Areia",
+            "side": "A",
+            "team": "tr",
+            "throw": "Clique esquerdo",
+            "spot_image": "pixels/inferno/molotov-areia-spot.png",
+            "pixel_image": "pixels/inferno/molotov-areia-pixel.png",
+            "result_image": "",
+            "steps": null
+        },
+        {
+            "id": 10,
+            "type": "entry",
+            "map": "inferno",
+            "local": "Tapete",
+            "side": "A",
+            "team": "tr",
+            "throw": null,
+            "spot_image": null,
+            "pixel_image": null,
+            "result_image": "pixels/mirage/jungle-pixel.png",
+            "steps": [
+                7,
+                8,
+                9
+            ]
         }
-      ]
-    },
-    {
-      "id": 7,
-      "type": "smokes",
-      "map": "inferno",
-      "local": "Van",
-      "side": "A",
-      "team": "tr",
-      "throw": "Clique esquerdo",
-      "spot_image": "pixels/inferno/smoke-van-spot.png",
-      "pixel_image": "pixels/inferno/smoke-van-pixel.png",
-      "result_image": "",
-      "steps": null
-    },
-    {
-      "id": 8,
-      "type": "bangs",
-      "map": "inferno",
-      "local": "Tapete",
-      "side": "A",
-      "team": "tr",
-      "throw": "Agache + Clique esquerdo",
-      "spot_image": "pixels/inferno/bang-areia-spot.png",
-      "pixel_image": "pixels/inferno/bang-areia-pixel.png",
-      "result_image": "",
-      "steps": null
-    },
-    {
-      "id": 9,
-      "type": "molotovs",
-      "map": "inferno",
-      "local": "Areia",
-      "side": "A",
-      "team": "tr",
-      "throw": "Clique esquerdo",
-      "spot_image": "pixels/inferno/molotov-areia-spot.png",
-      "pixel_image": "pixels/inferno/molotov-areia-pixel.png",
-      "result_image": "",
-      "steps": null
-    },
-    {
-      "id": 10,
-      "type": "entry",
-      "map": "inferno",
-      "local": "Tapete",
-      "side": "A",
-      "team": "tr",
-      "throw": null,
-      "spot_image": null,
-      "pixel_image": null,
-      "result_image": "pixels/mirage/jungle-pixel.png",
-      "steps": [
-        7,
-        8,
-        9
-      ]
-    },
-    {
-      "id": 11,
-      "type": "Smokes",
-      "map": "Mirage",
-      "local": "Janela",
-      "side": "Meio",
-      "team": "CT",
-      "throw": "Clique esquerdo",
-      "spot_image": "...",
-      "pixel_image": "...",
-      "result_image": "...",
-      "steps": null
-    },
-    {
-      "id": 12,
-      "type": "Smokes",
-      "map": "Mirage",
-      "local": "Janela",
-      "side": "Meio",
-      "team": "CT",
-      "throw": "Clique esquerdo",
-      "spot_image": "...",
-      "pixel_image": "...",
-      "result_image": "...",
-      "steps": null
-    }
-  ]
+    ]
 }
