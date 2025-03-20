@@ -118,7 +118,7 @@ const nades = [
     team: "tr",
     steps: [7, 8, 9],
     result_image: "pixels/mirage/jungle-pixel.png"
-  },
+  }
 ];
 
 export { nades };
