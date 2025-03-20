@@ -146,45 +146,6 @@
                 8,
                 9
             ]
-        },
-        {
-            "id": 11,
-            "type": "Smokes",
-            "map": "Mirage",
-            "local": "Janela",
-            "side": "Meio",
-            "team": "CT",
-            "throw": "Clique esquerdo",
-            "spot_image": "...",
-            "pixel_image": "...",
-            "result_image": "...",
-            "steps": null
-        },
-        {
-            "id": 12,
-            "type": "Smokes",
-            "map": "Mirage",
-            "local": "Janela",
-            "side": "Meio",
-            "team": "CT",
-            "throw": "Clique esquerdo",
-            "spot_image": "...",
-            "pixel_image": "...",
-            "result_image": "...",
-            "steps": null
-        },
-        {
-            "id": 13,
-            "type": "Smokes",
-            "map": "Nuke",
-            "local": "Passagem",
-            "side": "Fora",
-            "team": "TR",
-            "throw": "Jump and Throw",
-            "spot_image": "https://github.com/user-attachments/assets/4baccf90-a017-4914-902d-8a2d797249d1",
-            "pixel_image": "https://github.com/user-attachments/assets/8fcd4bc8-d377-4a7d-84c4-35b0eddd38d0",
-            "result_image": "N/A",
-            "steps": null
         }
     ]
 }

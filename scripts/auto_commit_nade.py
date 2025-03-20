@@ -73,11 +73,11 @@ def extract_url(value):
 
 novos_dados = {
     "id": int(df['id'].max()) + 1,
-    "type": issue_info['tipo_de_nade'],
-    "map": issue_info['mapa'],
+    "type": issue_info['tipo_de_nade'].lower(),
+    "map": issue_info['mapa'].lower(),
     "local": issue_info['local'],
     "side": issue_info['lado'],
-    "team": issue_info['time'],
+    "team": issue_info['time'].lower(),
     "throw": issue_info['tipo_de_arremesso'],
     "spot_image": extract_url(issue_info['imagem_do_spot']),
     "pixel_image": extract_url(issue_info['imagem_do_pixel']),
