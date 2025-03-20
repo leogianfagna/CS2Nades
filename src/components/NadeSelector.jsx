@@ -1,10 +1,12 @@
 import { useEffect, useState, useContext } from "react";
-import { nades } from "/public/data/nades";
+import data from "/public/data/nades.json";
 import { FilterContext } from "../context/FilterContext";
 import "./NadeSelector.css";
 import EntrySteps from "./EntrySteps";
 
 export const NadeSelector = () => {
+  const nades = data["nades"];
+
   const { map } = useContext(FilterContext);
   const { team } = useContext(FilterContext);
   const { nade, setNade } = useContext(FilterContext);
