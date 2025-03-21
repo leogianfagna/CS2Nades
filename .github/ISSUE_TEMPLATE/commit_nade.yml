@@ -1,6 +1,7 @@
 name: Insert nade
 title: Adicionar uma nova nade
 description: "Insira nades através deste issue."
+labels: ['nade']
 body:
   - type: dropdown
     id: type
@@ -83,5 +84,12 @@ body:
     attributes:
       label: "Imagem do resultado"
       description: "Envie uma imagem de como fica a granada."
+    validations:
+      required: true
+  - type: textarea
+    id: desc
+    attributes:
+      label: "Informações extras"
+      description: "Se necessário, informe algo."
     validations:
       required: true

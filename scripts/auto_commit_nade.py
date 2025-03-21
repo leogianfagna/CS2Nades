@@ -16,7 +16,7 @@ issue_body = issue.body
 def extract_issue_info(body):
     info = {}
     # Expressão regular para capturar campos no formato "### Campo: valor"
-    pattern = r"###\s*(.*?)\s*\n\s*(.*?)(?=\n###|\Z)"
+    pattern = r"###\s*(.*?)\s*\n\s*(.*?)\s*(?=\n###|\n$)"
     matches = re.findall(pattern, body, re.DOTALL)
     for match in matches:
         key = match[0].strip().lower().replace(' ', '_')
