@@ -10,8 +10,10 @@ jobs:
 
     steps:
     - name: Check aprove label
-      if: github.event.label.name == 'nade aprovada'
-      run: echo "Nade será adicionada pela existência do label."
+      if: github.event.label.name != 'nade aprovada'
+      run: |
+        echo "Label não é 'nade aprovada'. Encerrando workflow."
+        exit 1
 
     - name: Checkout repository
       uses: actions/checkout@v2
