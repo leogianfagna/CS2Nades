@@ -33,3 +33,9 @@ jobs:
         ISSUE_NUMBER: ${{ github.event.issue.number }}
       run: |
         python scripts/auto_commit_nade.py
+
+    - name: Trigger Deploy workflow
+      uses: peter-evans/repository-dispatch@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        event-type: trigger-deploy
