@@ -146,6 +146,19 @@
                 8,
                 9
             ]
+        },
+        {
+            "id": 11,
+            "type": "smokes",
+            "map": "nuke",
+            "local": "Passagem 1",
+            "side": "Fora",
+            "team": "tr",
+            "throw": "Jump and Throw",
+            "spot_image": "https://github.com/user-attachments/assets/a9bb9724-c7ff-40bb-9da7-98763aab98d8",
+            "pixel_image": "https://github.com/user-attachments/assets/038598d2-b1e2-4bec-8ebd-b013720075b9",
+            "result_image": "https://github.com/user-attachments/assets/352f5d44-3ea5-4895-80af-009d3b15d3d7",
+            "steps": null
         }
     ]
 }
