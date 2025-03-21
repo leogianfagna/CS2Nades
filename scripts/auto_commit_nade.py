@@ -37,7 +37,7 @@ required_fields = {
     'time': 'Time',
     'imagem_do_spot': 'Imagem do spot',
     'imagem_do_pixel': 'Imagem do pixel',
-    'imagem_do_result_image': 'Imagem do resultado'
+    'imagem_do_resultado': 'Imagem do resultado'
 }
 
 missing_fields = []
@@ -73,7 +73,7 @@ novos_dados = {
     "throw": issue_info['tipo_de_arremesso'],
     "spot_image": extract_url(issue_info['imagem_do_spot']),
     "pixel_image": extract_url(issue_info['imagem_do_pixel']),
-    "result_image": extract_url(issue_info['imagem_do_result_image']),
+    "result_image": extract_url(issue_info['imagem_do_resultado']),
     "steps": None
 }
 

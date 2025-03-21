@@ -92,4 +92,4 @@ body:
       label: "Informações extras"
       description: "Se necessário, informe algo."
     validations:
-      required: true
+      required: false
