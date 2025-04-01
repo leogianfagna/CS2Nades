@@ -172,6 +172,19 @@
             "pixel_image": "https://github.com/user-attachments/assets/bd4c44c4-6f9b-49d2-8eb7-67496d5087d5",
             "result_image": "https://github.com/user-attachments/assets/c78a4b2f-45a7-42f6-a80e-63a0bbf834fc",
             "steps": null
+        },
+        {
+            "id": 13,
+            "type": "bangs",
+            "map": "anubis",
+            "local": "Rato",
+            "side": "B",
+            "team": "ct",
+            "throw": "Clique esquerdo",
+            "spot_image": "https://github.com/user-attachments/assets/0bb5951b-9f4c-4cc6-a9ec-dc8b7010c24e",
+            "pixel_image": "https://github.com/user-attachments/assets/9e332bf2-52d0-4aa9-82d1-c9721cdbb8cd",
+            "result_image": "https://github.com/user-attachments/assets/2a5b2aee-898a-4f15-8b45-a94bec48a63a",
+            "steps": null
         }
     ]
 }
