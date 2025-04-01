@@ -18,7 +18,7 @@ export const MapsSelector = () => {
     "Inferno",
     "Ancient",
     "Anubis",
-    "Dust2",
+    "Dust 2",
     "Nuke",
     "Train",
   ];
