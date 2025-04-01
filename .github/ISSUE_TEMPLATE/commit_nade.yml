@@ -2,6 +2,7 @@ name: Insert nade
 title: Adicionar uma nova nade
 description: "Insira nades através deste issue."
 labels: ['nade']
+assignees: leogianfagna
 body:
   - type: dropdown
     id: type
