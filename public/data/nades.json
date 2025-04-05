@@ -198,6 +198,19 @@
             "pixel_image": "https://github.com/user-attachments/assets/4050baac-0b7a-4277-a112-cf50c040be5c",
             "result_image": "https://github.com/user-attachments/assets/b0d9b2c3-40ac-4356-b45a-8250d58b5a01",
             "steps": null
+        },
+        {
+            "id": 15,
+            "type": "bangs",
+            "map": "inferno",
+            "local": "Entrada B",
+            "side": "B",
+            "team": "ct",
+            "throw": "Agache + Clique esquerdo",
+            "spot_image": "https://github.com/user-attachments/assets/43c7422a-d91a-4690-8a14-9efd38e4af09",
+            "pixel_image": "https://github.com/user-attachments/assets/25e4111c-c979-4092-b652-b88025effe5e",
+            "result_image": "https://github.com/user-attachments/assets/cbdbc6bc-3669-498e-b33f-a767c75bf7d1",
+            "steps": null
         }
     ]
 }
