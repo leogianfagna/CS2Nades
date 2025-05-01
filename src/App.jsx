@@ -6,11 +6,13 @@ import { MapsSelector } from "./components/MapsSelector";
 import { NadeSelector } from "./components/NadeSelector";
 import TeamSelector from "./components/TeamSelector";
 import NavBar from "./components/Structure/NavBar";
+import MapCs from "./components/Map";
 
 function App() {
   return (
     <>
       <NavBar />
+      <MapCs />
       <MapsSelector />
       <TeamSelector />
       <NadeSelector />
