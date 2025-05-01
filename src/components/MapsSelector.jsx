@@ -23,7 +23,7 @@ export const MapsSelector = () => {
     "Train",
   ];
 
-  return (
+  return !map ? (
     <section className="container" id="map-section">
       <div className="text-center mb-2">
         <h2 className="news-title mb-0">Escolha o mapa</h2>
@@ -52,5 +52,5 @@ export const MapsSelector = () => {
         </div>
       </div>
     </section>
-  );
+  ) : null;
 };

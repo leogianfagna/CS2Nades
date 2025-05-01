@@ -12,7 +12,7 @@ const TeamSelector = () => {
     setNade(null);
   }, [team]);
 
-  return map ? (
+  return (map && !team) ? (
     <section className="container" id="team-section">
       <div className="text-center">
         <h2 className="news-title mb-0">Escolha o time</h2>

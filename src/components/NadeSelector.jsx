@@ -152,7 +152,7 @@ export const NadeSelector = () => {
   }, [nadeType, map, setNade]);
 
   // Cria o elemento apenas se map estiver definido
-  return team ? (
+  return (team && !nadeType) ? (
     <section className="container" id="nade-section">
       {/* Exibição das nades filtrados */}
       <div className="container text-center" style={{ marginBottom: "1rem" }}>
