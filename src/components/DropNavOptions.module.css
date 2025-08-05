@@ -1,0 +1,9 @@
+.dropdown-button {
+  background-color: #333333;
+  border-radius: 8px;
+}
+
+.dropdown-button > button {
+  width: 130px;
+  color: white;
+}
