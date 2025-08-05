@@ -9,7 +9,11 @@ const DropNavOptions = ({ title, options }) => {
       title={title}
       variant="custom"
     >
-      <Dropdown.Item eventKey="1">Action</Dropdown.Item>
+      {options.map((option, i) => (
+        <Dropdown.Item eventKey={`${option.id}-${i}`}>
+          {option.name}
+        </Dropdown.Item>
+      ))}
     </DropdownButton>
   );
 };
