@@ -1,6 +1,7 @@
 import "./MapsSelector.css";
 import { useContext } from "react";
 import { FilterContext } from "/src/context/FilterContext";
+import { maps } from "/src/constants/maps.js";
 
 export const MapsSelector = () => {
   const { map, setMap } = useContext(FilterContext);
@@ -13,16 +14,6 @@ export const MapsSelector = () => {
     }
   };
 
-  const maps = [
-    "Mirage",
-    "Inferno",
-    "Ancient",
-    "Anubis",
-    "Dust 2",
-    "Nuke",
-    "Train",
-  ];
-
   return !map ? (
     <section className="container" id="map-section">
       <div className="text-center mb-2">
@@ -31,24 +22,21 @@ export const MapsSelector = () => {
       </div>
       <div className="container text-center">
         <div className="row row-cols-2 row-cols-lg-3 g-2 g-lg-3">
-          {
-            /* Repetir para cada mapa */
-            maps.map((mapName, index) => (
-              <div className="col" key={index}>
-                <div className="p-3">
-                  <a href="#team-section">
-                    <img
-                      src={"maps/" + mapName + ".png"}
-                      className={`maps-selector ${estilosSelecao(mapName)}`}
-                      onClick={() => {
-                        setMap(mapName.toLowerCase());
-                      }}
-                    ></img>
-                  </a>
-                </div>
+          {maps.map((map, index) => (
+            <div className="col" key={index}>
+              <div className="p-3">
+                <a href="#team-section">
+                  <img
+                    src={"maps/" + map.name + ".png"}
+                    className={`maps-selector ${estilosSelecao(map.name)}`}
+                    onClick={() => {
+                      setMap(map.id);
+                    }}
+                  ></img>
+                </a>
               </div>
-            ))
-          }
+            </div>
+          ))}
         </div>
       </div>
     </section>
