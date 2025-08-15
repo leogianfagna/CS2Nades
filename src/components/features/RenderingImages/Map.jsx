@@ -6,7 +6,7 @@ import Nade from "../../commons/Nade";
 
 const MapCs = () => {
   const { map, team, nadeType } = useContext(FilterContext);
-  const filters = { map, team, type: nadeType }; //to-do: esse filter tem que vir pronto do filterContext
+  const filters = { map, team, type: nadeType.toLowerCase() }; //to-do: esse filter tem que vir pronto do filterContext
   const filteredNades = getFilteredNades(filters);
 
   return (map, team, nadeType) ? (

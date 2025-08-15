@@ -2,7 +2,7 @@
   "nades": [
     {
       "id": 1,
-      "pos": [30, 15],
+      "pos": [63, 88.5],
       "type": "bangs",
       "map": "dust 2",
       "local": "Escuro",
@@ -21,7 +21,7 @@
       "pos": [60, 41],
       "local": "Janela",
       "side": "MEIO",
-      "team": "ct",
+      "team": "tr",
       "throw": "D + Jump and Throw",
       "spot_image": "pixels/mirage/janela-spot.png",
       "pixel_image": "pixels/mirage/janela-pixel.png",
@@ -30,12 +30,12 @@
     },
     {
       "id": 3,
-      "pos": [30, 15],
+      "pos": [53, 83],
       "type": "smokes",
       "map": "mirage",
       "local": "CT",
       "side": "A",
-      "team": "ct",
+      "team": "tr",
       "throw": "Jump and Throw",
       "spot_image": "pixels/mirage/ct-spot.png",
       "pixel_image": "pixels/mirage/ct-pixel.png",
@@ -44,12 +44,12 @@
     },
     {
       "id": 4,
-      "pos": [30, 15],
+      "pos": [43, 64],
       "type": "smokes",
       "map": "mirage",
       "local": "Cabecinha",
       "side": "A",
-      "team": "ct",
+      "team": "tr",
       "throw": "Clique esquerdo",
       "spot_image": "pixels/mirage/cabecinha-spot.png",
       "pixel_image": "pixels/mirage/cabecinha-pixel.png",
@@ -58,12 +58,12 @@
     },
     {
       "id": 5,
-      "pos": [30, 15],
+      "pos": [48, 65],
       "type": "smokes",
       "map": "mirage",
       "local": "Jungle",
       "side": "A",
-      "team": "ct",
+      "team": "tr",
       "throw": "Jump and Throw",
       "spot_image": "pixels/mirage/jungle-spot.png",
       "pixel_image": "pixels/mirage/jungle-pixel.png",
@@ -72,7 +72,6 @@
     },
     {
       "id": 6,
-      "pos": [30, 15],
       "type": "solo",
       "map": "ancient",
       "local": "B",
@@ -99,7 +98,7 @@
     },
     {
       "id": 7,
-      "pos": [30, 15],
+      "pos": [79, 17],
       "type": "smokes",
       "map": "inferno",
       "local": "Van",
@@ -113,7 +112,7 @@
     },
     {
       "id": 8,
-      "pos": [30, 15],
+      "pos": [87, 10],
       "type": "bangs",
       "map": "inferno",
       "local": "Tapete",
@@ -127,7 +126,7 @@
     },
     {
       "id": 9,
-      "pos": [30, 15],
+      "pos": [90, 15],
       "type": "molotovs",
       "map": "inferno",
       "local": "Areia",
@@ -155,7 +154,7 @@
     },
     {
       "id": 11,
-      "pos": [30, 15],
+      "pos": [54, 10],
       "type": "smokes",
       "map": "nuke",
       "local": "Passagem 1",
@@ -169,7 +168,7 @@
     },
     {
       "id": 12,
-      "pos": [30, 15],
+      "pos": [59, 10],
       "type": "smokes",
       "map": "nuke",
       "local": "Passagem 2",
@@ -183,7 +182,7 @@
     },
     {
       "id": 13,
-      "pos": [30, 15],
+      "pos": [34, 57],
       "type": "bangs",
       "map": "anubis",
       "local": "Rato",
@@ -197,7 +196,7 @@
     },
     {
       "id": 14,
-      "pos": [30, 15],
+      "pos": [60, 53],
       "type": "smokes",
       "map": "dust 2",
       "local": "Meio porta",
@@ -211,7 +210,7 @@
     },
     {
       "id": 15,
-      "pos": [30, 15],
+      "pos": [52, 70],
       "type": "bangs",
       "map": "inferno",
       "local": "Entrada B",
