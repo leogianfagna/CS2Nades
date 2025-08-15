@@ -7,12 +7,13 @@ import { NadeSelector } from "./components/NadeSelector";
 import TeamSelector from "./components/TeamSelector";
 import NavBar from "./components/Structure/NavBar";
 import MapCs from "./components/Map";
+import Container from "./components/Container";
 
 function App() {
   return (
     <>
       <NavBar />
-      <MapCs />
+      <Container />
       <MapsSelector />
       <TeamSelector />
       <NadeSelector />
