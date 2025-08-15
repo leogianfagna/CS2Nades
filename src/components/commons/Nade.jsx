@@ -1,5 +1,10 @@
-const Nade = ({ pos, type, id }) => {
+import { useContext } from "react";
+import { FilterContext } from "/src/context/FilterContext";
+
+const Nade = ({ pos, nade }) => {
+  const { setNade } = useContext(FilterContext);
   const [x, y] = pos;
+
   return (
     <button
       style={{
@@ -7,11 +12,11 @@ const Nade = ({ pos, type, id }) => {
         position: "absolute",
         right: `${x}%`,
         top: `${y}%`,
-        opacity: "0.3"
+        opacity: "0.3",
       }}
-    //   onClick={() => setSelectedNade(id)}
+      onClick={() => setNade(nade)}
     >
-      {type}
+      {nade.type}
     </button>
   );
 };
