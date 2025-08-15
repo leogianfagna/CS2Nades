@@ -1,5 +1,5 @@
-import MapCs from "./Map";
-import NadeImage from "./NadeImage";
+import MapCs from "/src/components/features/RenderingImages/Map";
+import NadeImage from "/src/components/features/RenderingImages/NadeImage";
 
 const Container = () => {
   return (

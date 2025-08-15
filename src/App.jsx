@@ -2,12 +2,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
 
-import { MapsSelector } from "./components/MapsSelector";
-import { NadeSelector } from "./components/NadeSelector";
-import TeamSelector from "./components/TeamSelector";
-import NavBar from "./components/Structure/NavBar";
-import MapCs from "./components/Map";
-import Container from "./components/Container";
+import { MapsSelector } from "/src/components/features/Selectors/MapsSelector";
+import { NadeSelector } from "/src/components/features/Selectors/NadeSelector";
+import TeamSelector from "/src/components/features/Selectors/TeamSelector";
+import NavBar from "./components/layout/NavBar";
+import Container from "./components/layout/Container";
 
 function App() {
   return (

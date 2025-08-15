@@ -1,7 +1,7 @@
 import "./NavBar.css";
 import { FilterContext } from "/src/context/FilterContext";
 import { useContext } from "react";
-import DropNavOptions from "../DropNavOptions";
+import DropNavOptions from "/src/components/commons/DropNavOptions";
 
 import { maps } from "/src/constants/maps.js";
 import { teams } from "/src/constants/teams.js";

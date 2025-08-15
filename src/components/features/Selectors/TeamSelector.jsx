@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import "./TeamSelector.css";
 import { useContext, useEffect } from "react";
-import { FilterContext } from "../context/FilterContext";
+import { FilterContext } from "/src/context/FilterContext";
 
 const TeamSelector = () => {
   const { setNade } = useContext(FilterContext);

@@ -1,5 +1,5 @@
 import "./EntrySteps.css";
-import { FilterContext } from "../context/FilterContext";
+import { FilterContext } from "/src/context/FilterContext";
 import { useContext } from "react";
 
 const EntrySteps = () => {

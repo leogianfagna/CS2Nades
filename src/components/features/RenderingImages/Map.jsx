@@ -1,6 +1,6 @@
 import "./Map.css";
-import { useContext, useEffect } from "react";
-import { FilterContext } from "../context/FilterContext";
+import { useContext } from "react";
+import { FilterContext } from "/src/context/FilterContext";
 import { getFilteredNades } from "/src/utils/filters.js";
 
 
