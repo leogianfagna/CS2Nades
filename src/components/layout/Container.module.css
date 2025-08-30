@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2%;
+  border: 2px solid blue;
+  height: 100%;
+  overflow: hidden;
+}
+
+.side {
+  flex: 0 0 48%;
+  box-sizing: "border-box";
+}

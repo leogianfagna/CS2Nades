@@ -6,14 +6,16 @@ import { MapsSelector } from "/src/components/features/Selectors/MapsSelector";
 import NavBar from "./components/layout/NavBar";
 import Container from "./components/layout/Container";
 import NadeTypeSelector from "./components/features/Selectors/NadeTypeSelector";
+import Body from "./components/layout/Body";
 
 function App() {
   return (
     <>
-      <NavBar />
+      <Body />
+      {/* <NavBar />
       <Container />
       <MapsSelector />
-      <NadeTypeSelector />
+      <NadeTypeSelector /> */}
     </>
   );
 }

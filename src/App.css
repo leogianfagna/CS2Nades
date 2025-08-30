@@ -76,5 +76,5 @@ section {
 }
 
 .test-border {
-    outline: 3px solid green !important;
+    border: 3px solid green !important;
 }

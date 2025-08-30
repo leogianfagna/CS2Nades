@@ -18,7 +18,7 @@ const NavBar = () => {
     types.find((type) => type.id === filter.type)?.name || "Não selecionado";
 
   return (
-    <nav className="navbar-container test-border">
+    <nav className="navbar-container">
       <div className="navbar-elements">
         <DropNavOptions title={mapTitle} options={maps} handler={handleMap} />
         <DropNavOptions
