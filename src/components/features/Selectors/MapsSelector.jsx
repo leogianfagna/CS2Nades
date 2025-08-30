@@ -4,17 +4,17 @@ import { FilterContext } from "/src/context/FilterContext";
 import { maps } from "/src/constants/maps.js";
 
 export const MapsSelector = () => {
-  const { map, setMap } = useContext(FilterContext);
+  const { filter, handleMap } = useContext(FilterContext);
 
   const estilosSelecao = (index) => {
-    if (map === null || map === index.toLowerCase()) {
+    if (filter.map === null || filter.map === index.toLowerCase()) {
       return "";
     } else {
       return "maps-selector-gray";
     }
   };
 
-  return !map ? (
+  return !filter.map ? (
     <section className="container" id="map-section">
       <div className="text-center mb-2">
         <h2 className="news-title mb-0">Escolha o mapa</h2>
@@ -30,7 +30,7 @@ export const MapsSelector = () => {
                     src={"maps/" + map.name + ".png"}
                     className={`maps-selector ${estilosSelecao(map.name)}`}
                     onClick={() => {
-                      setMap(map.id);
+                      handleMap(map.id);
                     }}
                   ></img>
                 </a>

@@ -11,6 +11,7 @@ const DropNavOptions = ({ title, options, handler }) => {
     >
       {options.map((option, i) => (
         <Dropdown.Item
+          key={option.id}
           eventKey={`${option.id}-${i}`}
           onClick={() => handler(option.id)}
         >

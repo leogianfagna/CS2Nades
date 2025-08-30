@@ -3,8 +3,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
 
 import { MapsSelector } from "/src/components/features/Selectors/MapsSelector";
-import { NadeSelector } from "/src/components/features/Selectors/NadeSelector";
-import TeamSelector from "/src/components/features/Selectors/TeamSelector";
 import NavBar from "./components/layout/NavBar";
 import Container from "./components/layout/Container";
 
@@ -13,9 +11,9 @@ function App() {
     <>
       <NavBar />
       <Container />
-      <MapsSelector />
+      {/* <MapsSelector />
       <TeamSelector />
-      <NadeSelector />
+      <NadeSelector /> */}
     </>
   );
 }

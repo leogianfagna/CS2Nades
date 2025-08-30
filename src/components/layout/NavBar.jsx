@@ -8,18 +8,28 @@ import { teams } from "/src/constants/teams.js";
 import { types } from "/src/constants/types.js";
 
 const NavBar = () => {
-  const { map, team, nadeType, setMap, setTeam, setNadeType } =
+  const { filter, handleMap, handleTeam, handleType } =
     useContext(FilterContext);
+  const mapTitle =
+    maps.find((map) => map.id === filter.map)?.name || "Não selecionado";
+  const teamTitle =
+    teams.find((team) => team.id === filter.team)?.name || "Qualquer";
+  const typeTitle =
+    types.find((type) => type.id === filter.type)?.name || "Não selecionado";
 
   return (
     <nav className="navbar-container test-border">
       <div className="navbar-elements">
-        <DropNavOptions title={map} options={maps} handler={setMap} />
-        <DropNavOptions title={team} options={teams} handler={setTeam} />
+        <DropNavOptions title={mapTitle} options={maps} handler={handleMap} />
         <DropNavOptions
-          title={nadeType}
+          title={teamTitle}
+          options={teams}
+          handler={handleTeam}
+        />
+        <DropNavOptions
+          title={typeTitle}
           options={types}
-          handler={setNadeType}
+          handler={handleType}
         />
       </div>
     </nav>

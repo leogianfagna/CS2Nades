@@ -3,13 +3,11 @@ import { FilterContext } from "/src/context/FilterContext";
 import { useContext } from "react";
 
 const EntrySteps = () => {
-  const { nadeType } = useContext(FilterContext);
-  const { nade } = useContext(FilterContext);
-  const { step, setStep } = useContext(FilterContext);
+  const { filter, nade, step, setStep } = useContext(FilterContext);
 
   // Só vai ser exibido na categoria entry, e também se alguma nade foi selecionada, para não tentar
   // acessar elementos nulos/vazios
-  return nadeType === "Entry" && nade ? (
+  return filter.type === "Entry" && nade ? (
     <div className="row steps" style={{ marginTop: "1rem" }}>
       {nade.steps.map((nade, i) => (
         <div
