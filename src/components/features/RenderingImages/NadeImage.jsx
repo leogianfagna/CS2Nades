@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { FilterContext } from "/src/context/FilterContext";
+import styles from "./NadeImage.module.css";
 
 const NadeImage = () => {
   const { nade } = useContext(FilterContext);
@@ -9,7 +10,7 @@ const NadeImage = () => {
       <img
         src={nade.spot_image}
         alt="Pixel da granada"
-        className="nade-image left"
+        className={`${styles["nade-image"]} ${styles["left"]}`}
       ></img>
     );
   };
@@ -20,22 +21,21 @@ const NadeImage = () => {
         <img
           src={nade.pixel_image}
           alt="Pixel da granada"
-          className="nade-image right"
+          className={`${styles["nade-image"]} ${styles["right"]}`}
         ></img>
         <div className="overlay-text">{nade?.throw ?? ""}</div>
       </>
     );
   };
 
+  // To-do: customizar mais a imagem, está não centralizada, sem efeitos, etc
   return (
-    <div>
+    <div className={styles["container-image"]}>
       {nade && (
-        <div className="col-8 nades-images-container">
-          <div className="single-nade-image-container">{renderLeftImage()}</div>
-          <div className="single-nade-image-container">
-            {renderRightImage()}
-          </div>
-        </div>
+        <>
+          <div className={styles["spot-image"]}>{renderLeftImage()}</div>
+          <div className={styles["spot-image"]}>{renderRightImage()}</div>
+        </>
       )}
     </div>
   );
