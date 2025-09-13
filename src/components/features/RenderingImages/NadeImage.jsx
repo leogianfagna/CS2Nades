@@ -29,21 +29,27 @@ const NadeImage = () => {
   };
 
   return (
-    <div className={styles["container-image"]}>
-      <header>
-        <span>Posição: {nade.standing ?? "N/A"}</span>
-        <span>Arremesso: {nade.throw ?? "N/A"}</span>
-        <span>Movimento: {nade.movement ?? "N/A"}</span>
-      </header>
-      <div className={styles["image-grid"]}>
-        {nade && (
-          <>
-            <div className={styles["spot-image"]}>{renderLeftImage()}</div>
-            <div className={styles["spot-image"]}>{renderRightImage()}</div>
-          </>
-        )}
-      </div>
-    </div>
+    <>
+      {nade ? (
+        <div className={styles["container-image"]}>
+          <header>
+            <span>Posição: {nade.standing ?? "N/A"}</span>
+            <span>Arremesso: {nade.throw ?? "N/A"}</span>
+            <span>Movimento: {nade.movement ?? "N/A"}</span>
+          </header>
+          <div className={styles["image-grid"]}>
+            {nade && (
+              <>
+                <div className={styles["spot-image"]}>{renderLeftImage()}</div>
+                <div className={styles["spot-image"]}>{renderRightImage()}</div>
+              </>
+            )}
+          </div>
+        </div>
+      ) : (
+        <p>to-do: Escolher nada</p>
+      )}
+    </>
   );
 };
 
