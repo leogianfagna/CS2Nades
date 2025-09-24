@@ -34,3 +34,12 @@ function getSanitizedFilters(filters) {
 
   return values;
 }
+
+export function getTypeTotalNades(map, type, team) {
+  const total = nades
+    .filter((nade) => (type ? nade.type === type : true))
+    .filter((nade) => (map ? nade.map === map : true))
+    .filter((nade) => (team ? nade.team === team : true));
+
+  return total.length;
+}

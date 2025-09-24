@@ -11,10 +11,17 @@
 .ct,
 .tr {
   position: absolute;
-  opacity: 0.4;
+  opacity: 0.6;
   width: 28px;
   height: 28px;
   border-radius: 100%;
   transform: translateX(-50%);
+  transition: 0.2s;
   cursor: pointer;
+}
+
+.ct:hover,
+.tr:hover {
+  width: 32px;
+  height: 32px;
 }
