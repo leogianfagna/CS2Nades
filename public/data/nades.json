@@ -211,6 +211,19 @@
             "pixel_image": "https://github.com/user-attachments/assets/25e4111c-c979-4092-b652-b88025effe5e",
             "result_image": "https://github.com/user-attachments/assets/cbdbc6bc-3669-498e-b33f-a767c75bf7d1",
             "steps": null
+        },
+        {
+            "id": 16,
+            "type": "smokes",
+            "map": "inferno",
+            "local": "Base CT + Floreira",
+            "side": "B",
+            "team": "tr",
+            "throw": "Clique Esquerdo",
+            "spot_image": "<img width=\"982\" height=\"1079\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/1030fad7-672b-40e5-8d37-0a3ed2144485\" />",
+            "pixel_image": "<img width=\"882\" height=\"1066\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/3e969a8c-ae0c-4f8c-a64e-a640f9dab36a\" />",
+            "result_image": "<img width=\"882\" height=\"1066\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/b1bf9064-aaca-489f-8917-911186361444\" />",
+            "steps": null
         }
     ]
 }
