@@ -57,11 +57,27 @@ df = pd.DataFrame(dados['nades'])
 print(df)
 
 # Transformar issue registrado em uma nova entrada
-pattern = r"!\[.*?\]\((.*?)\)"
-
 def extract_url(value):
-    match = re.search(pattern, value)
-    return match.group(1) if match else value
+    if not value:
+        return value
+
+    # GitHub issue body can arrive as HTML img tag:
+    # <img ... src="https://..." />
+    html_match = re.search(r'<img[^>]+src=[\'"]([^\'"]+)[\'"]', value, re.IGNORECASE)
+    if html_match:
+        return html_match.group(1)
+
+    # Markdown image/link: ![alt](https://...) or [text](https://...)
+    md_match = re.search(r'\[[^\]]*\]\((https?://[^\s)]+)\)', value)
+    if md_match:
+        return md_match.group(1)
+
+    # Fallback for plain URL in text
+    url_match = re.search(r'(https?://[^\s\'"<>]+)', value)
+    if url_match:
+        return url_match.group(1)
+
+    return value
 
 novos_dados = {
     "id": int(df['id'].max()) + 1,
