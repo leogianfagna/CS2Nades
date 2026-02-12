@@ -224,6 +224,19 @@
             "pixel_image": "https://github.com/user-attachments/assets/3e969a8c-ae0c-4f8c-a64e-a640f9dab36a",
             "result_image": "https://github.com/user-attachments/assets/b1bf9064-aaca-489f-8917-911186361444",
             "steps": null
+        },
+        {
+            "id": 17,
+            "type": "smokes",
+            "map": "inferno",
+            "local": "Base CT",
+            "side": "B",
+            "team": "tr",
+            "throw": "Jump and Throw com Esquerdo e Direito",
+            "spot_image": "https://github.com/user-attachments/assets/9266e1cd-1884-49eb-907a-4b61f47f771a",
+            "pixel_image": "https://github.com/user-attachments/assets/19b1c9b2-be2b-48fa-9588-acdb39be24b6",
+            "result_image": "https://github.com/user-attachments/assets/0b2d2a02-cdf9-4829-87a0-00a6875c6914",
+            "steps": null
         }
     ]
 }
